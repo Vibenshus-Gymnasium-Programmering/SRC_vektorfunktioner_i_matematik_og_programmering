@@ -47,7 +47,7 @@ Overskriften er bare en fancy måde at skrive "løsninger vha de teknikker I ken
 ** Den rette linje
 Her er et eksempel på, hvordan en vektorfunktionen for en ret linje kan animeres i =arcade=. Logikken i koden minder om anvendelsen af en skyder til tiden i geogebra.
 
-#+begin_src python -n :exports both :results none :eval never-export :comments link :tangle ret_linje_imperativ.py 
+#+begin_src python :exports both :results none :eval never-export :comments link :tangle ret_linje_imperativ.py 
 # Dette er et eksempel på en animation af en ret linje, som en vektorfunktion
 # Animationen foregår vha biblioteket arcade
 import arcade
@@ -120,7 +120,7 @@ Animationen skulle gerne ligne det følgende:
 
 ** Cirklen
 Her ser I et eksempel på animationen af en cirkel. Her er der igen en variabel ~tid~, som holder styr på, hvad tiden er. Tiden bliver opdateret ca. 60 gange i sekundet.
-#+begin_src python -n :exports both :results none :eval never-export :comments link :tangle cirkel_imperativ.py
+#+begin_src python :exports both :results none :eval never-export :comments link :tangle cirkel_imperativ.py
 # Dette er et eksempel på en animation af en cirkel, som en vektorfunktion
 # Animationen foregår vha biblioteket arcade
 import arcade
@@ -191,7 +191,7 @@ Animationen skulle gerne se nogenlunde således ud:
 Lad os se, hvad der sker, hvis man danner en *sammensat* bevægelse af den rette linje og en cirkel.
 Lad os sige, at vi i stedet for at lade cirklens centrum ligge fast, så sætter vi cirklens centrum til at være det bevægede punkt på den rette linje.
 
-#+begin_src python -n :exports both :results none :eval never-export :comments link :tangle sammensat_linje_cirkel.py
+#+begin_src python :exports both :results none :eval never-export :comments link :tangle sammensat_linje_cirkel.py
 # Dette er et eksempel på en sammensat animation af en cirkel på en ret linje som en vektorfunktion
 # Animationen foregår vha biblioteket arcade
 import arcade
@@ -340,7 +340,7 @@ Der oprettes en klasse for den rette linje fra bunden, mens der skabes en ny kla
 
 Lad os først demonstrere, hvad koden gør. Bagefter kan vi gennemgå den.
 
-#+begin_src python -n :exports both :results none :eval never-export :comments link :tangle ret_linje_klasse_ny.py
+#+begin_src python :exports both :results none :eval never-export :comments link :tangle ret_linje_klasse_ny.py
 import arcade
 BREDDE = 800
 HOEJDE = 600
@@ -429,7 +429,7 @@ class Ret_Linje {
 ** Cirklen
 Her ser I en implementering af cirklen vha. OOP. Vi demonstrerer lige først, hvad programmet gør.
 
-#+begin_src python -n :exports both :results none :eval never-export :comments link :tangle cirklen_klasse_ny.py
+#+begin_src python :exports both :results none :eval never-export :comments link :tangle cirklen_klasse_ny.py
 import arcade
 import math
 BREDDE = 800
@@ -507,7 +507,7 @@ Lad os sammensætte bevægelsen, så cirklen drejer rundt om den rette linjes pu
    
 *** 1. metode
 Her opdateres cirklens centrum for hver iteration.
-#+begin_src python -n :exports both :results none :eval never-export :comments link :tangle ret_linje_og_cirken_sammensat_klasse_ny.py
+#+begin_src python :exports both :results none :eval never-export :comments link :tangle ret_linje_og_cirken_sammensat_klasse_ny.py
 import arcade
 import math
 BREDDE = 800
@@ -601,7 +601,7 @@ main()
 
 *** 2. metode
 Her oprettes der en ret linje og en cirkel, som bare bevæger sig rundt om origo. Den sammensatte bevægelse tegnes ved "bare" at lægge de to bevægelser sammen. Selve animationen foregår uden for objekterne. Sporene er fjernet fra selve bevægelsesklasserne og er implementeret i Vindues-klassen i stedet for.
-#+begin_src python -n :exports both :results none :eval never-export :comments link :tangle ret_linje_og_cirkel_sammensat_som_sum.py
+#+begin_src python :exports both :results none :eval never-export :comments link :tangle ret_linje_og_cirkel_sammensat_som_sum.py
 import arcade
 import math
 BREDDE = 800
