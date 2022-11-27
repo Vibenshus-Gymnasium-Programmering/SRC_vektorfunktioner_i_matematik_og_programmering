@@ -223,26 +223,26 @@
 <span class="subtitle">SRC - 2.p - Vibenshus Gymnasium</span>
 </h1>
 
-<div id="outline-container-org788c13f" class="outline-2">
-<h2 id="org788c13f">Introduktion</h2>
-<div class="outline-text-2" id="text-org788c13f">
+<div id="outline-container-orgbb17f8b" class="outline-2">
+<h2 id="orgbb17f8b">Introduktion</h2>
+<div class="outline-text-2" id="text-orgbb17f8b">
 <p>
 Efter en matematisk introduktion til begrebet vektorfunktioner, også kaldet parameterfremstillinger, er det tid til at se på, hvordan sådanne kan animeres i programmering. Vi kommer til at anvende <code>python</code> sammen med bibliotektet <code>arcade</code>, som allerede anvendes i programmeringsundervisningen.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4700bf2" class="outline-2">
-<h2 id="org4700bf2">Fra matematik til programmering</h2>
-<div class="outline-text-2" id="text-org4700bf2">
+<div id="outline-container-org7bc17e5" class="outline-2">
+<h2 id="org7bc17e5">Fra matematik til programmering</h2>
+<div class="outline-text-2" id="text-org7bc17e5">
 <p>
 I løbet af denne præsentation vil der blive taget udgangspunkt i <b>den rette linje</b> og <b>cirklen</b> beskrevet som vektorfunktioner. For at repetere skriver vi lige de generelle vektorfunktioner for den rette linje og cirklen op her:
 </p>
 </div>
 
-<div id="outline-container-orgba516ad" class="outline-3">
-<h3 id="orgba516ad">Den rette linje</h3>
-<div class="outline-text-3" id="text-orgba516ad">
+<div id="outline-container-org93ddb10" class="outline-3">
+<h3 id="org93ddb10">Den rette linje</h3>
+<div class="outline-text-3" id="text-org93ddb10">
 <p>
 Den rette linje kan beskrives ved hjælp af et kendt punkt \(P_0 = \begin{pmatrix} x_0\\x_y \end{pmatrix}\) på linjen samt en retningsvektor \(\vec{r} = \begin{pmatrix} r_x \\ r_y \end{pmatrix}\). Den endelige vektorfunktion kan derefter skrives som:
 </p>
@@ -256,15 +256,15 @@ Hvis I klikker på billedet af vektorfunktionen for den rette linje, kan I downl
 </p>
 
 
-<div id="org8428c6e" class="figure">
+<div id="orge3a012a" class="figure">
 <p><a href="./ggb/ret_linje_vektorfunktion.ggb"><img src="./img/ret_linje_vektorfunktion.png" alt="ret_linje_vektorfunktion.png" /></a>
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org72b9973" class="outline-3">
-<h3 id="org72b9973">Cirklen</h3>
-<div class="outline-text-3" id="text-org72b9973">
+<div id="outline-container-org9302826" class="outline-3">
+<h3 id="org9302826">Cirklen</h3>
+<div class="outline-text-3" id="text-org9302826">
 <p>
 Cirklen beskrives som bekendt ved hjælp af et centrum \((x_0, y_0)\) og en radius \(r\), men dette er ikke nok, hvis cirklen skal animeres. Derfor indfører man en vinkel målt fra den positive x-retning, og denne vinkel kan ydermere beskrives som en <b>vinkelhastighed</b> ganget med tiden (eller hvad man nu kalder parameteren), \(\theta = \omega \cdot t\). Endelig kan man også tilføre en faseforskydning (ofte bare kaldet fasen) \(\phi\), som forskyder startvinklen, når \(t=0\). Den endelige vektorfunktion ser derfor således ud:
 </p>
@@ -278,16 +278,16 @@ Igen kan I klikke på billedet for at downloade den tilhørende geogebrafil. Den
 </p>
 
 
-<div id="org79e006b" class="figure">
+<div id="orgb3a01f9" class="figure">
 <p><a href="./ggb/cirkel_vektorfunktion.ggb"><img src="./img/cirkel_vektorfunktion.png" alt="cirkel_vektorfunktion.png" /></a>
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgcc8a285" class="outline-3">
-<h3 id="orgcc8a285">Fra geogebra til arcade</h3>
-<div class="outline-text-3" id="text-orgcc8a285">
+<div id="outline-container-org3b5a7c8" class="outline-3">
+<h3 id="org3b5a7c8">Fra geogebra til arcade</h3>
+<div class="outline-text-3" id="text-org3b5a7c8">
 <p>
 Når vi skal animere forskellige vektorfunktioner i arcade i stedet for geogebra, skal vi være opmærksomme på en række ting.
 </p>
@@ -318,78 +318,78 @@ I de følgende afsnit vil I se forskellige måder til at animere rette linjer, c
 </div>
 </div>
 
-<div id="outline-container-org302b5ca" class="outline-2">
-<h2 id="org302b5ca">Imperative procedurale løsninger</h2>
-<div class="outline-text-2" id="text-org302b5ca">
+<div id="outline-container-org4bdb224" class="outline-2">
+<h2 id="org4bdb224">Imperative procedurale løsninger</h2>
+<div class="outline-text-2" id="text-org4bdb224">
 <p>
 Overskriften er bare en fancy måde at skrive "løsninger vha de teknikker I kender allerede". :)
 </p>
 </div>
-<div id="outline-container-orgb8a77da" class="outline-3">
-<h3 id="orgb8a77da">Den rette linje</h3>
-<div class="outline-text-3" id="text-orgb8a77da">
+<div id="outline-container-orgad1a4f0" class="outline-3">
+<h3 id="orgad1a4f0">Den rette linje</h3>
+<div class="outline-text-3" id="text-orgad1a4f0">
 <p>
 Her er et eksempel på, hvordan en vektorfunktionen for en ret linje kan animeres i <code>arcade</code>. Logikken i koden minder om anvendelsen af en skyder til tiden i geogebra.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Dette er et eksempel p&#229; en animation af en ret linje, som en vektorfunktion</span>
-<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Animationen foreg&#229;r vha biblioteket arcade</span>
-<span style="color: #0000FF;">import</span> arcade
+<pre class="src src-python"><span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Dette er et eksempel p&#229; en animation af en ret linje, som en vektorfunktion</span>
+<span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Animationen foreg&#229;r vha biblioteket arcade</span>
+<span style="color: #c48702; font-weight: bold;">import</span> arcade
 
-<span style="color: #BA36A5;">BREDDE</span> = 800
-<span style="color: #BA36A5;">HOEJDE</span> = 600
-<span style="color: #BA36A5;">SPORLAENGDE</span> = 200
-<span style="color: #BA36A5;">FARVE</span> = arcade.csscolor.DARK_RED
+<span style="color: #6fafff;">BREDDE</span> = 800
+<span style="color: #6fafff;">HOEJDE</span> = 600
+<span style="color: #6fafff;">SPORLAENGDE</span> = 200
+<span style="color: #6fafff;">FARVE</span> = arcade.csscolor.DARK_RED
 
 
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">ret_linje</span><span style="color: #707183;">(</span>tid, stationaert_punkt, retningsvektor<span style="color: #707183;">)</span>:
-    <span style="color: #036A07;">"""Returnerer x- og y-koordinaterne til et punkt p&#229; en ret linje.</span>
-<span style="color: #036A07;">    Er implementeret p&#229; helt samme m&#229;de, som i matematik."""</span>
-    <span style="color: #BA36A5;">x_0</span>, <span style="color: #BA36A5;">y_0</span> = stationaert_punkt
-    <span style="color: #BA36A5;">r_x</span>, <span style="color: #BA36A5;">r_y</span> = retningsvektor
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">De to n&#230;ste linjer er som taget fra matematikbogen</span>
-    <span style="color: #BA36A5;">x</span> = x_0 + r_x * tid
-    <span style="color: #BA36A5;">y</span> = y_0 + r_y * tid
-    <span style="color: #0000FF;">return</span> x, y
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">ret_linje</span><span style="color: #d0730f;">(</span>tid, stationaert_punkt, retningsvektor<span style="color: #d0730f;">)</span>:
+    <span style="color: #5f9f6f; font-style: italic;">"""Returnerer x- og y-koordinaterne til et punkt p&#229; en ret linje.</span>
+<span style="color: #5f9f6f; font-style: italic;">    Er implementeret p&#229; helt samme m&#229;de, som i matematik."""</span>
+    <span style="color: #6fafff;">x_0</span>, <span style="color: #6fafff;">y_0</span> = stationaert_punkt
+    <span style="color: #6fafff;">r_x</span>, <span style="color: #6fafff;">r_y</span> = retningsvektor
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">De to n&#230;ste linjer er som taget fra matematikbogen</span>
+    <span style="color: #6fafff;">x</span> = x_0 + r_x * tid
+    <span style="color: #6fafff;">y</span> = y_0 + r_y * tid
+    <span style="color: #c48702; font-weight: bold;">return</span> x, y
 
-<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Denne funktion kaldes vha arcade.schedule i main. Bliver kaldt 60 gange i sekundet.</span>
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">tegn</span><span style="color: #707183;">(</span>delta_tid<span style="color: #707183;">)</span>:
-    arcade.start_render<span style="color: #707183;">()</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Beregner punkt p&#229; linjen</span>
-    <span style="color: #BA36A5;">x</span>,<span style="color: #BA36A5;">y</span> = ret_linje<span style="color: #707183;">(</span>tegn.tid, <span style="color: #7388D6;">(</span>0,500<span style="color: #7388D6;">)</span>,<span style="color: #7388D6;">(</span>1,-0.5<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tegner punktet p&#229; linjen</span>
-    arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 5, FARVE<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Fjerner det f&#248;rste punkt i sporet, hvis sporet er for langt</span>
-    <span style="color: #0000FF;">if</span> <span style="color: #006FE0;">len</span><span style="color: #707183;">(</span>tegn.spor<span style="color: #707183;">)</span> &gt; SPORLAENGDE:
-        tegn.spor.pop<span style="color: #707183;">(</span>0<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tegner sporet </span>
-    <span style="color: #0000FF;">for</span> punkt <span style="color: #0000FF;">in</span> tegn.spor:
-        arcade.draw_circle_filled<span style="color: #707183;">(</span>*punkt, 2, FARVE<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Opdaterer tiden, hvis punktet er inden for vinduet</span>
-    <span style="color: #0000FF;">if</span> <span style="color: #707183;">(</span>x &gt;= 0 <span style="color: #0000FF;">and</span> x &lt;BREDDE<span style="color: #707183;">)</span> <span style="color: #0000FF;">and</span> <span style="color: #707183;">(</span>y &gt;= 0 <span style="color: #0000FF;">and</span> y &lt;= HOEJDE<span style="color: #707183;">)</span>:
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tiden opdateres med 1 </span>
-        tegn.<span style="color: #BA36A5;">tid</span> += delta_tid * 60
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tilf&#248;jer det sidste nye punkt til sporet</span>
-        tegn.spor.append<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>x,y<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Stopper animationen, hvis punktet p&#229; linjen er uden for vinduet</span>
-    <span style="color: #0000FF;">else</span>:
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tiden holdes konstant, s&#229; animationen stopper</span>
+<span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Denne funktion kaldes vha arcade.schedule i main. Bliver kaldt 60 gange i sekundet.</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">tegn</span><span style="color: #d0730f;">(</span>delta_tid<span style="color: #d0730f;">)</span>:
+    arcade.start_render<span style="color: #d0730f;">()</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Beregner punkt p&#229; linjen</span>
+    <span style="color: #6fafff;">x</span>,<span style="color: #6fafff;">y</span> = ret_linje<span style="color: #d0730f;">(</span>tegn.tid, <span style="color: #64aa0f;">(</span>0,500<span style="color: #64aa0f;">)</span>,<span style="color: #64aa0f;">(</span>1,-0.5<span style="color: #64aa0f;">)</span><span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tegner punktet p&#229; linjen</span>
+    arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 5, FARVE<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Fjerner det f&#248;rste punkt i sporet, hvis sporet er for langt</span>
+    <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #ff7a7f; font-weight: bold;">len</span><span style="color: #d0730f;">(</span>tegn.spor<span style="color: #d0730f;">)</span> &gt; SPORLAENGDE:
+        tegn.spor.pop<span style="color: #d0730f;">(</span>0<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tegner sporet </span>
+    <span style="color: #c48702; font-weight: bold;">for</span> punkt <span style="color: #c48702; font-weight: bold;">in</span> tegn.spor:
+        arcade.draw_circle_filled<span style="color: #d0730f;">(</span>*punkt, 2, FARVE<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Opdaterer tiden, hvis punktet er inden for vinduet</span>
+    <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #d0730f;">(</span>x &gt;= 0 <span style="color: #c48702; font-weight: bold;">and</span> x &lt;BREDDE<span style="color: #d0730f;">)</span> <span style="color: #c48702; font-weight: bold;">and</span> <span style="color: #d0730f;">(</span>y &gt;= 0 <span style="color: #c48702; font-weight: bold;">and</span> y &lt;= HOEJDE<span style="color: #d0730f;">)</span>:
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tiden opdateres med 1 </span>
+        tegn.<span style="color: #6fafff;">tid</span> += delta_tid * 60
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tilf&#248;jer det sidste nye punkt til sporet</span>
+        tegn.spor.append<span style="color: #d0730f;">(</span><span style="color: #64aa0f;">(</span>x,y<span style="color: #64aa0f;">)</span><span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Stopper animationen, hvis punktet p&#229; linjen er uden for vinduet</span>
+    <span style="color: #c48702; font-weight: bold;">else</span>:
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tiden holdes konstant, s&#229; animationen stopper</span>
         tegn.tid = tegn.tid
         
 
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">main</span><span style="color: #707183;">()</span>:
-    arcade.open_window<span style="color: #707183;">(</span>BREDDE, HOEJDE, <span style="color: #008000;">"En ret linje"</span><span style="color: #707183;">)</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">main</span><span style="color: #d0730f;">()</span>:
+    arcade.open_window<span style="color: #d0730f;">(</span>BREDDE, HOEJDE, <span style="color: #f06a3f;">"En ret linje"</span><span style="color: #d0730f;">)</span>
 
-    arcade.set_background_color<span style="color: #707183;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #707183;">)</span>
+    arcade.set_background_color<span style="color: #d0730f;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #d0730f;">)</span>
 
-    tegn.<span style="color: #BA36A5;">tid</span> = 0
-    tegn.<span style="color: #BA36A5;">spor</span> = <span style="color: #006FE0;">list</span><span style="color: #707183;">()</span>
-    arcade.schedule<span style="color: #707183;">(</span>tegn, 1/60<span style="color: #707183;">)</span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Funktionen tegn kaldes 60 gange i sekundet</span>
+    tegn.<span style="color: #6fafff;">tid</span> = 0
+    tegn.<span style="color: #6fafff;">spor</span> = <span style="color: #ff7a7f; font-weight: bold;">list</span><span style="color: #d0730f;">()</span>
+    arcade.schedule<span style="color: #d0730f;">(</span>tegn, 1/60<span style="color: #d0730f;">)</span> <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Funktionen tegn kaldes 60 gange i sekundet</span>
 
-    arcade.run<span style="color: #707183;">()</span>
+    arcade.run<span style="color: #d0730f;">()</span>
 
-main<span style="color: #707183;">()</span>
+main<span style="color: #d0730f;">()</span>
 </pre>
 </div>
 
@@ -399,9 +399,9 @@ Animationen skulle gerne ligne det følgende:
 </p>
 </div>
 
-<div id="outline-container-org8d6d516" class="outline-4">
-<h4 id="org8d6d516">Opgaver</h4>
-<div class="outline-text-4" id="text-org8d6d516">
+<div id="outline-container-orgefca563" class="outline-4">
+<h4 id="orgefca563">Opgaver</h4>
+<div class="outline-text-4" id="text-orgefca563">
 <ul class="org-ul">
 <li>Skift farven på linjen. Både punkt og spor, eller hver for sig.</li>
 <li>Ændr startpunktet for linjen.</li>
@@ -414,65 +414,65 @@ Animationen skulle gerne ligne det følgende:
 </div>
 </div>
 
-<div id="outline-container-org95337ac" class="outline-3">
-<h3 id="org95337ac">Cirklen</h3>
-<div class="outline-text-3" id="text-org95337ac">
+<div id="outline-container-org40446d8" class="outline-3">
+<h3 id="org40446d8">Cirklen</h3>
+<div class="outline-text-3" id="text-org40446d8">
 <p>
 Her ser I et eksempel på animationen af en cirkel. Her er der igen en variabel <code>tid</code>, som holder styr på, hvad tiden er. Tiden bliver opdateret ca. 60 gange i sekundet.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Dette er et eksempel p&#229; en animation af en cirkel, som en vektorfunktion</span>
-<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Animationen foreg&#229;r vha biblioteket arcade</span>
-<span style="color: #0000FF;">import</span> arcade
-<span style="color: #0000FF;">import</span> math
+<pre class="src src-python"><span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Dette er et eksempel p&#229; en animation af en cirkel, som en vektorfunktion</span>
+<span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Animationen foreg&#229;r vha biblioteket arcade</span>
+<span style="color: #c48702; font-weight: bold;">import</span> arcade
+<span style="color: #c48702; font-weight: bold;">import</span> math
 
-<span style="color: #BA36A5;">BREDDE</span> = 800
-<span style="color: #BA36A5;">HOEJDE</span> = 600
-<span style="color: #BA36A5;">SPORLAENGDE</span> = 200
-<span style="color: #BA36A5;">FARVE</span> = arcade.csscolor.DARK_RED
+<span style="color: #6fafff;">BREDDE</span> = 800
+<span style="color: #6fafff;">HOEJDE</span> = 600
+<span style="color: #6fafff;">SPORLAENGDE</span> = 200
+<span style="color: #6fafff;">FARVE</span> = arcade.csscolor.DARK_RED
 
 
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">cirkel</span><span style="color: #707183;">(</span>tid, centrum, radius, vinkelhastighed, fase = 0<span style="color: #707183;">)</span>:
-    <span style="color: #036A07;">"""Returnerer x- og y-koordinaterne til et punkt p&#229; periferien af en cirkel.</span>
-<span style="color: #036A07;">    Cirklen er defineret ud fra et centrum, en radius, en vinkelhastighed samt en fase.</span>
-<span style="color: #036A07;">    Er implementeret p&#229; helt samme m&#229;de, som i matematik."""</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">cirkel</span><span style="color: #d0730f;">(</span>tid, centrum, radius, vinkelhastighed, fase = 0<span style="color: #d0730f;">)</span>:
+    <span style="color: #5f9f6f; font-style: italic;">"""Returnerer x- og y-koordinaterne til et punkt p&#229; periferien af en cirkel.</span>
+<span style="color: #5f9f6f; font-style: italic;">    Cirklen er defineret ud fra et centrum, en radius, en vinkelhastighed samt en fase.</span>
+<span style="color: #5f9f6f; font-style: italic;">    Er implementeret p&#229; helt samme m&#229;de, som i matematik."""</span>
     x_c, y_c = centrum
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">De to n&#230;ste linjer er som taget fra matematikbogen</span>
-    x = x_c + radius * math.cos<span style="color: #707183;">(</span>vinkelhastighed * tid + fase<span style="color: #707183;">)</span>
-    y = y_c + radius * math.sin<span style="color: #707183;">(</span>vinkelhastighed * tid + fase<span style="color: #707183;">)</span>
-    <span style="color: #0000FF;">return</span> x, y
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">De to n&#230;ste linjer er som taget fra matematikbogen</span>
+    x = x_c + radius * math.cos<span style="color: #d0730f;">(</span>vinkelhastighed * tid + fase<span style="color: #d0730f;">)</span>
+    y = y_c + radius * math.sin<span style="color: #d0730f;">(</span>vinkelhastighed * tid + fase<span style="color: #d0730f;">)</span>
+    <span style="color: #c48702; font-weight: bold;">return</span> x, y
     
-<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Denne funktion kaldes vha arcade.schedule i main. Bliver kaldt 60 gange i sekundet.</span>
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">tegn</span><span style="color: #707183;">(</span>delta_tid<span style="color: #707183;">)</span>:
-    arcade.start_render<span style="color: #707183;">()</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Beregner punkt p&#229; cirklens periferi</span>
-    x,y = cirkel<span style="color: #707183;">(</span>tegn.tid, <span style="color: #7388D6;">(</span>BREDDE/2, HOEJDE/2<span style="color: #7388D6;">)</span>, 100, 1, 0<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tegner punktet p&#229; cirklens periferi</span>
-    arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 5, FARVE<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Fjerner det f&#248;rste punkt i sporet, hvis sporet er for langt</span>
-    <span style="color: #0000FF;">if</span> <span style="color: #006FE0;">len</span><span style="color: #707183;">(</span>tegn.spor<span style="color: #707183;">)</span> &gt; SPORLAENGDE:
-        tegn.spor.pop<span style="color: #707183;">(</span>0<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tegner sporet </span>
-    <span style="color: #0000FF;">for</span> punkt <span style="color: #0000FF;">in</span> tegn.spor:
-        arcade.draw_circle_filled<span style="color: #707183;">(</span>*punkt, 2, FARVE<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Opdaterer tiden</span>
+<span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Denne funktion kaldes vha arcade.schedule i main. Bliver kaldt 60 gange i sekundet.</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">tegn</span><span style="color: #d0730f;">(</span>delta_tid<span style="color: #d0730f;">)</span>:
+    arcade.start_render<span style="color: #d0730f;">()</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Beregner punkt p&#229; cirklens periferi</span>
+    x,y = cirkel<span style="color: #d0730f;">(</span>tegn.tid, <span style="color: #64aa0f;">(</span>BREDDE/2, HOEJDE/2<span style="color: #64aa0f;">)</span>, 100, 1, 0<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tegner punktet p&#229; cirklens periferi</span>
+    arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 5, FARVE<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Fjerner det f&#248;rste punkt i sporet, hvis sporet er for langt</span>
+    <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #ff7a7f; font-weight: bold;">len</span><span style="color: #d0730f;">(</span>tegn.spor<span style="color: #d0730f;">)</span> &gt; SPORLAENGDE:
+        tegn.spor.pop<span style="color: #d0730f;">(</span>0<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tegner sporet </span>
+    <span style="color: #c48702; font-weight: bold;">for</span> punkt <span style="color: #c48702; font-weight: bold;">in</span> tegn.spor:
+        arcade.draw_circle_filled<span style="color: #d0730f;">(</span>*punkt, 2, FARVE<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Opdaterer tiden</span>
     tegn.tid += delta_tid 
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tilf&#248;jer det sidste nye punkt til sporet</span>
-    tegn.spor.append<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>x,y<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tilf&#248;jer det sidste nye punkt til sporet</span>
+    tegn.spor.append<span style="color: #d0730f;">(</span><span style="color: #64aa0f;">(</span>x,y<span style="color: #64aa0f;">)</span><span style="color: #d0730f;">)</span>
         
 
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">main</span><span style="color: #707183;">()</span>:
-    arcade.open_window<span style="color: #707183;">(</span>BREDDE, HOEJDE, <span style="color: #008000;">"En cirkel"</span><span style="color: #707183;">)</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">main</span><span style="color: #d0730f;">()</span>:
+    arcade.open_window<span style="color: #d0730f;">(</span>BREDDE, HOEJDE, <span style="color: #f06a3f;">"En cirkel"</span><span style="color: #d0730f;">)</span>
 
-    arcade.set_background_color<span style="color: #707183;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #707183;">)</span>
+    arcade.set_background_color<span style="color: #d0730f;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #d0730f;">)</span>
 
     tegn.tid = 0.0
-    tegn.spor = <span style="color: #006FE0;">list</span><span style="color: #707183;">()</span>
-    arcade.schedule<span style="color: #707183;">(</span>tegn, 1/60<span style="color: #707183;">)</span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Funktionen tegn kaldes 60 gange i sekundet</span>
+    tegn.spor = <span style="color: #ff7a7f; font-weight: bold;">list</span><span style="color: #d0730f;">()</span>
+    arcade.schedule<span style="color: #d0730f;">(</span>tegn, 1/60<span style="color: #d0730f;">)</span> <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Funktionen tegn kaldes 60 gange i sekundet</span>
 
-    arcade.run<span style="color: #707183;">()</span>
+    arcade.run<span style="color: #d0730f;">()</span>
 
-main<span style="color: #707183;">()</span>
+main<span style="color: #d0730f;">()</span>
 </pre>
 </div>
 
@@ -482,9 +482,9 @@ Animationen skulle gerne se nogenlunde således ud:
 </p>
 </div>
 
-<div id="outline-container-org9183dc6" class="outline-4">
-<h4 id="org9183dc6">Opgaver</h4>
-<div class="outline-text-4" id="text-org9183dc6">
+<div id="outline-container-org628161e" class="outline-4">
+<h4 id="org628161e">Opgaver</h4>
+<div class="outline-text-4" id="text-org628161e">
 <ul class="org-ul">
 <li>Skift farven på cirklen. Både punkt og spor, eller hver for sig.</li>
 <li>Ændr centrum.</li>
@@ -498,101 +498,101 @@ Animationen skulle gerne se nogenlunde således ud:
 </div>
 
 
-<div id="outline-container-org622e29f" class="outline-3">
-<h3 id="org622e29f">Sammesatte bevægelser</h3>
-<div class="outline-text-3" id="text-org622e29f">
+<div id="outline-container-org07f978a" class="outline-3">
+<h3 id="org07f978a">Sammesatte bevægelser</h3>
+<div class="outline-text-3" id="text-org07f978a">
 <p>
 Lad os se, hvad der sker, hvis man danner en <b>sammensat</b> bevægelse af den rette linje og en cirkel.
 Lad os sige, at vi i stedet for at lade cirklens centrum ligge fast, så sætter vi cirklens centrum til at være det bevægede punkt på den rette linje.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Dette er et eksempel p&#229; en sammensat animation af en cirkel p&#229; en ret linje som en vektorfunktion</span>
-<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Animationen foreg&#229;r vha biblioteket arcade</span>
-<span style="color: #0000FF;">import</span> arcade
-<span style="color: #0000FF;">import</span> math
+<pre class="src src-python"><span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Dette er et eksempel p&#229; en sammensat animation af en cirkel p&#229; en ret linje som en vektorfunktion</span>
+<span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Animationen foreg&#229;r vha biblioteket arcade</span>
+<span style="color: #c48702; font-weight: bold;">import</span> arcade
+<span style="color: #c48702; font-weight: bold;">import</span> math
 
-<span style="color: #BA36A5;">BREDDE</span> = 800
-<span style="color: #BA36A5;">HOEJDE</span> = 600
-<span style="color: #BA36A5;">SPORLAENGDE_LINJE</span> = 200
-<span style="color: #BA36A5;">SPORLAENGDE_CIRKEL</span> = 200
-<span style="color: #BA36A5;">FARVE_LINJE</span> = arcade.csscolor.DARK_RED
-<span style="color: #BA36A5;">FARVE_CIRKEL</span> = arcade.csscolor.BLUE
+<span style="color: #6fafff;">BREDDE</span> = 800
+<span style="color: #6fafff;">HOEJDE</span> = 600
+<span style="color: #6fafff;">SPORLAENGDE_LINJE</span> = 200
+<span style="color: #6fafff;">SPORLAENGDE_CIRKEL</span> = 200
+<span style="color: #6fafff;">FARVE_LINJE</span> = arcade.csscolor.DARK_RED
+<span style="color: #6fafff;">FARVE_CIRKEL</span> = arcade.csscolor.BLUE
 
-<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Genbrugt fra eksemplet med den rette linje</span>
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">ret_linje</span><span style="color: #707183;">(</span>tid, stationaert_punkt, retningsvektor<span style="color: #707183;">)</span>:
-    <span style="color: #036A07;">"""Returnerer x- og y-koordinaterne til et punkt p&#229; en ret linje.</span>
-<span style="color: #036A07;">    Er implementeret p&#229; helt samme m&#229;de, som i matematik."""</span>
-    <span style="color: #BA36A5;">x_0</span>, <span style="color: #BA36A5;">y_0</span> = stationaert_punkt
-    <span style="color: #BA36A5;">r_x</span>, <span style="color: #BA36A5;">r_y</span> = retningsvektor
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">De to n&#230;ste linjer er som taget fra matematikbogen</span>
-    <span style="color: #BA36A5;">x</span> = x_0 + r_x * tid
-    <span style="color: #BA36A5;">y</span> = y_0 + r_y * tid
-    <span style="color: #0000FF;">return</span> x, y
+<span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Genbrugt fra eksemplet med den rette linje</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">ret_linje</span><span style="color: #d0730f;">(</span>tid, stationaert_punkt, retningsvektor<span style="color: #d0730f;">)</span>:
+    <span style="color: #5f9f6f; font-style: italic;">"""Returnerer x- og y-koordinaterne til et punkt p&#229; en ret linje.</span>
+<span style="color: #5f9f6f; font-style: italic;">    Er implementeret p&#229; helt samme m&#229;de, som i matematik."""</span>
+    <span style="color: #6fafff;">x_0</span>, <span style="color: #6fafff;">y_0</span> = stationaert_punkt
+    <span style="color: #6fafff;">r_x</span>, <span style="color: #6fafff;">r_y</span> = retningsvektor
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">De to n&#230;ste linjer er som taget fra matematikbogen</span>
+    <span style="color: #6fafff;">x</span> = x_0 + r_x * tid
+    <span style="color: #6fafff;">y</span> = y_0 + r_y * tid
+    <span style="color: #c48702; font-weight: bold;">return</span> x, y
 
-<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Genbrugt fra eksemplet med cirklen</span>
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">cirkel</span><span style="color: #707183;">(</span>tid, centrum, radius, vinkelhastighed, fase = 0<span style="color: #707183;">)</span>:
-    <span style="color: #036A07;">"""Returnerer x- og y-koordinaterne til et punkt p&#229; periferien af en cirkel.</span>
-<span style="color: #036A07;">    Cirklen er defineret ud fra et centrum, en radius, en vinkelhastighed samt en fase.</span>
-<span style="color: #036A07;">    Er implementeret p&#229; helt samme m&#229;de, som i matematik."""</span>
+<span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Genbrugt fra eksemplet med cirklen</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">cirkel</span><span style="color: #d0730f;">(</span>tid, centrum, radius, vinkelhastighed, fase = 0<span style="color: #d0730f;">)</span>:
+    <span style="color: #5f9f6f; font-style: italic;">"""Returnerer x- og y-koordinaterne til et punkt p&#229; periferien af en cirkel.</span>
+<span style="color: #5f9f6f; font-style: italic;">    Cirklen er defineret ud fra et centrum, en radius, en vinkelhastighed samt en fase.</span>
+<span style="color: #5f9f6f; font-style: italic;">    Er implementeret p&#229; helt samme m&#229;de, som i matematik."""</span>
     x_c, y_c = centrum
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">De to n&#230;ste linjer er som taget fra matematikbogen</span>
-    x = x_c + radius * math.cos<span style="color: #707183;">(</span>vinkelhastighed * tid + fase<span style="color: #707183;">)</span>
-    y = y_c + radius * math.sin<span style="color: #707183;">(</span>vinkelhastighed * tid + fase<span style="color: #707183;">)</span>
-    <span style="color: #0000FF;">return</span> x, y
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">De to n&#230;ste linjer er som taget fra matematikbogen</span>
+    x = x_c + radius * math.cos<span style="color: #d0730f;">(</span>vinkelhastighed * tid + fase<span style="color: #d0730f;">)</span>
+    y = y_c + radius * math.sin<span style="color: #d0730f;">(</span>vinkelhastighed * tid + fase<span style="color: #d0730f;">)</span>
+    <span style="color: #c48702; font-weight: bold;">return</span> x, y
     
-<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Denne funktion kaldes vha arcade.schedule i main. Bliver kaldt 60 gange i sekundet.</span>
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">tegn</span><span style="color: #707183;">(</span>delta_tid<span style="color: #707183;">)</span>:
-    arcade.start_render<span style="color: #707183;">()</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">F&#248;rst punkt for linjen</span>
-    x_linje,y_linje = ret_linje<span style="color: #707183;">(</span>tegn.tid, <span style="color: #7388D6;">(</span>0,500<span style="color: #7388D6;">)</span>,<span style="color: #7388D6;">(</span>1,-0.5<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tegner punktet p&#229; linjen</span>
-    arcade.draw_circle_filled<span style="color: #707183;">(</span>x_linje, y_linje, 5, FARVE_LINJE<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Fjerner det f&#248;rste punkt i sporet, hvis sporet er for langt</span>
-    <span style="color: #0000FF;">if</span> <span style="color: #006FE0;">len</span><span style="color: #707183;">(</span>tegn.spor_linje<span style="color: #707183;">)</span> &gt; SPORLAENGDE_LINJE:
-        tegn.spor_linje.pop<span style="color: #707183;">(</span>0<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tegner sporet  for linjen</span>
-    <span style="color: #0000FF;">for</span> punkt <span style="color: #0000FF;">in</span> tegn.spor_linje:
-        arcade.draw_circle_filled<span style="color: #707183;">(</span>*punkt, 2, FARVE_LINJE<span style="color: #707183;">)</span>
+<span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Denne funktion kaldes vha arcade.schedule i main. Bliver kaldt 60 gange i sekundet.</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">tegn</span><span style="color: #d0730f;">(</span>delta_tid<span style="color: #d0730f;">)</span>:
+    arcade.start_render<span style="color: #d0730f;">()</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">F&#248;rst punkt for linjen</span>
+    x_linje,y_linje = ret_linje<span style="color: #d0730f;">(</span>tegn.tid, <span style="color: #64aa0f;">(</span>0,500<span style="color: #64aa0f;">)</span>,<span style="color: #64aa0f;">(</span>1,-0.5<span style="color: #64aa0f;">)</span><span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tegner punktet p&#229; linjen</span>
+    arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x_linje, y_linje, 5, FARVE_LINJE<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Fjerner det f&#248;rste punkt i sporet, hvis sporet er for langt</span>
+    <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #ff7a7f; font-weight: bold;">len</span><span style="color: #d0730f;">(</span>tegn.spor_linje<span style="color: #d0730f;">)</span> &gt; SPORLAENGDE_LINJE:
+        tegn.spor_linje.pop<span style="color: #d0730f;">(</span>0<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tegner sporet  for linjen</span>
+    <span style="color: #c48702; font-weight: bold;">for</span> punkt <span style="color: #c48702; font-weight: bold;">in</span> tegn.spor_linje:
+        arcade.draw_circle_filled<span style="color: #d0730f;">(</span>*punkt, 2, FARVE_LINJE<span style="color: #d0730f;">)</span>
 
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Beregner punkt p&#229; cirklens periferi</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Linjens punkt s&#230;ttes til at v&#230;re cirklens centrum</span>
-    x_cirkel,y_cirkel = cirkel<span style="color: #707183;">(</span>tegn.tid, <span style="color: #7388D6;">(</span>x_linje, y_linje<span style="color: #7388D6;">)</span>, 100, 0.1, 0<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tegner punktet p&#229; cirklens periferi</span>
-    arcade.draw_circle_filled<span style="color: #707183;">(</span>x_cirkel, y_cirkel, 5, FARVE_CIRKEL<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Fjerner det f&#248;rste punkt i sporet, hvis sporet er for langt</span>
-    <span style="color: #0000FF;">if</span> <span style="color: #006FE0;">len</span><span style="color: #707183;">(</span>tegn.spor_cirkel<span style="color: #707183;">)</span> &gt; SPORLAENGDE_CIRKEL:
-        tegn.spor_cirkel.pop<span style="color: #707183;">(</span>0<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tegner sporet </span>
-    <span style="color: #0000FF;">for</span> punkt <span style="color: #0000FF;">in</span> tegn.spor_cirkel:
-        arcade.draw_circle_filled<span style="color: #707183;">(</span>*punkt, 2, FARVE_CIRKEL<span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Opdaterer tiden, hvis punktet for linjen er inden for vinduet</span>
-    <span style="color: #0000FF;">if</span> <span style="color: #707183;">(</span>x_linje &gt;= 0 <span style="color: #0000FF;">and</span> x_linje &lt;BREDDE<span style="color: #707183;">)</span> <span style="color: #0000FF;">and</span> <span style="color: #707183;">(</span>y_linje &gt;= 0 <span style="color: #0000FF;">and</span> y_linje &lt;= HOEJDE<span style="color: #707183;">)</span>:
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tiden opdateres med 1 </span>
-        tegn.tid += delta_tid * 60 <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Der er ganget med 60 for at f&#229; animationen til g&#229; hurtigere.</span>
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tilf&#248;jer det sidste nye punkt til sporet for linjen</span>
-        tegn.spor_linje.append<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>x_linje,y_linje<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tilf&#248;jer det sidste nye punkt til sporet for cirklen</span>
-        tegn.spor_cirkel.append<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>x_cirkel, y_cirkel<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Stopper animationen, hvis punktet p&#229; linjen er uden for vinduet</span>
-    <span style="color: #0000FF;">else</span>:
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tiden holdes konstant, s&#229; animationen stopper</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Beregner punkt p&#229; cirklens periferi</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Linjens punkt s&#230;ttes til at v&#230;re cirklens centrum</span>
+    x_cirkel,y_cirkel = cirkel<span style="color: #d0730f;">(</span>tegn.tid, <span style="color: #64aa0f;">(</span>x_linje, y_linje<span style="color: #64aa0f;">)</span>, 100, 0.1, 0<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tegner punktet p&#229; cirklens periferi</span>
+    arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x_cirkel, y_cirkel, 5, FARVE_CIRKEL<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Fjerner det f&#248;rste punkt i sporet, hvis sporet er for langt</span>
+    <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #ff7a7f; font-weight: bold;">len</span><span style="color: #d0730f;">(</span>tegn.spor_cirkel<span style="color: #d0730f;">)</span> &gt; SPORLAENGDE_CIRKEL:
+        tegn.spor_cirkel.pop<span style="color: #d0730f;">(</span>0<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tegner sporet </span>
+    <span style="color: #c48702; font-weight: bold;">for</span> punkt <span style="color: #c48702; font-weight: bold;">in</span> tegn.spor_cirkel:
+        arcade.draw_circle_filled<span style="color: #d0730f;">(</span>*punkt, 2, FARVE_CIRKEL<span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Opdaterer tiden, hvis punktet for linjen er inden for vinduet</span>
+    <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #d0730f;">(</span>x_linje &gt;= 0 <span style="color: #c48702; font-weight: bold;">and</span> x_linje &lt;BREDDE<span style="color: #d0730f;">)</span> <span style="color: #c48702; font-weight: bold;">and</span> <span style="color: #d0730f;">(</span>y_linje &gt;= 0 <span style="color: #c48702; font-weight: bold;">and</span> y_linje &lt;= HOEJDE<span style="color: #d0730f;">)</span>:
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tiden opdateres med 1 </span>
+        tegn.tid += delta_tid * 60 <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Der er ganget med 60 for at f&#229; animationen til g&#229; hurtigere.</span>
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tilf&#248;jer det sidste nye punkt til sporet for linjen</span>
+        tegn.spor_linje.append<span style="color: #d0730f;">(</span><span style="color: #64aa0f;">(</span>x_linje,y_linje<span style="color: #64aa0f;">)</span><span style="color: #d0730f;">)</span>
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tilf&#248;jer det sidste nye punkt til sporet for cirklen</span>
+        tegn.spor_cirkel.append<span style="color: #d0730f;">(</span><span style="color: #64aa0f;">(</span>x_cirkel, y_cirkel<span style="color: #64aa0f;">)</span><span style="color: #d0730f;">)</span>
+    <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Stopper animationen, hvis punktet p&#229; linjen er uden for vinduet</span>
+    <span style="color: #c48702; font-weight: bold;">else</span>:
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tiden holdes konstant, s&#229; animationen stopper</span>
         tegn.tid = tegn.tid
         
 
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">main</span><span style="color: #707183;">()</span>:
-    arcade.open_window<span style="color: #707183;">(</span>BREDDE, HOEJDE, <span style="color: #008000;">"En cirkel"</span><span style="color: #707183;">)</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">main</span><span style="color: #d0730f;">()</span>:
+    arcade.open_window<span style="color: #d0730f;">(</span>BREDDE, HOEJDE, <span style="color: #f06a3f;">"En cirkel"</span><span style="color: #d0730f;">)</span>
 
-    arcade.set_background_color<span style="color: #707183;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #707183;">)</span>
+    arcade.set_background_color<span style="color: #d0730f;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #d0730f;">)</span>
 
     tegn.tid = 0.0
-    tegn.spor_linje = <span style="color: #006FE0;">list</span><span style="color: #707183;">()</span>
-    tegn.spor_cirkel = <span style="color: #006FE0;">list</span><span style="color: #707183;">()</span>
-    arcade.schedule<span style="color: #707183;">(</span>tegn, 1/60<span style="color: #707183;">)</span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Funktionen tegn kaldes 60 gange i sekundet</span>
+    tegn.spor_linje = <span style="color: #ff7a7f; font-weight: bold;">list</span><span style="color: #d0730f;">()</span>
+    tegn.spor_cirkel = <span style="color: #ff7a7f; font-weight: bold;">list</span><span style="color: #d0730f;">()</span>
+    arcade.schedule<span style="color: #d0730f;">(</span>tegn, 1/60<span style="color: #d0730f;">)</span> <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Funktionen tegn kaldes 60 gange i sekundet</span>
 
-    arcade.run<span style="color: #707183;">()</span>
+    arcade.run<span style="color: #d0730f;">()</span>
 
-main<span style="color: #707183;">()</span>
+main<span style="color: #d0730f;">()</span>
 </pre>
 </div>
 
@@ -601,15 +601,15 @@ I kan se animationen af den sammensatte bevægelse mellem linjen og cirklen her.
 </p>
 
 
-<div id="org5a7ccd3" class="figure">
+<div id="org44f8193" class="figure">
 <p><img src="./img/ret_linje_og_cirkel.gif" alt="ret_linje_og_cirkel.gif" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org4da3a6a" class="outline-3">
-<h3 id="org4da3a6a">Opgaver</h3>
-<div class="outline-text-3" id="text-org4da3a6a">
+<div id="outline-container-orga0b66ec" class="outline-3">
+<h3 id="orga0b66ec">Opgaver</h3>
+<div class="outline-text-3" id="text-orga0b66ec">
 <ul class="org-ul">
 <li>Gennemgå koden i makkerpar. Se på forskelle og ligheder med de to tidligere eksempler om den rette linje og cirklen alene.</li>
 <li>Få linjen til at køre vandret.</li>
@@ -621,9 +621,9 @@ I kan se animationen af den sammensatte bevægelse mellem linjen og cirklen her.
 </div>
 
 
-<div id="outline-container-org95b575f" class="outline-3">
-<h3 id="org95b575f">Opgave: 2 sammensatte cirkler</h3>
-<div class="outline-text-3" id="text-org95b575f">
+<div id="outline-container-orgc9f8147" class="outline-3">
+<h3 id="orgc9f8147">Opgave: 2 sammensatte cirkler</h3>
+<div class="outline-text-3" id="text-orgc9f8147">
 <p>
 Nu er det jeres tur til at animere den sammensatte bevægelse for <b>2 cirkler</b>.
 </p>
@@ -634,13 +634,13 @@ I første omgang skal I se, om I kan danne nogle animationer, som ligner de to f
 </p>
 
 
-<div id="org345a3b3" class="figure">
+<div id="org888eddc" class="figure">
 <p><img src="./img/cirkler_sammensat_1.gif" alt="cirkler_sammensat_1.gif" />
 </p>
 </div>
 
 
-<div id="org2b6ae59" class="figure">
+<div id="orgb867970" class="figure">
 <p><img src="./img/cirkler_sammensat_2.gif" alt="cirkler_sammensat_2.gif" />
 </p>
 </div></li>
@@ -651,9 +651,9 @@ I første omgang skal I se, om I kan danne nogle animationer, som ligner de to f
 </div>
 
 
-<div id="outline-container-org732521c" class="outline-3">
-<h3 id="org732521c">"There must be a better way" - Raymond Hettinger python core developer</h3>
-<div class="outline-text-3" id="text-org732521c">
+<div id="outline-container-org34cf60f" class="outline-3">
+<h3 id="org34cf60f">"There must be a better way" - Raymond Hettinger python core developer</h3>
+<div class="outline-text-3" id="text-org34cf60f">
 <p>
 Forestil jer at I nu skal kombinere 3, 4 eller endnu flere bevægelser. Kan I forestille jer, hvor mange cirkler og linjer, I skal holde styr på?
 </p>
@@ -683,17 +683,17 @@ For at kunne holde styr på hver enkelt bevægelse (cirkel, linje, eller måske 
 </div>
 </div>
 
-<div id="outline-container-orgf3266f1" class="outline-2">
-<h2 id="orgf3266f1">Objektorienterede løsninger</h2>
-<div class="outline-text-2" id="text-orgf3266f1">
+<div id="outline-container-org2273a0b" class="outline-2">
+<h2 id="org2273a0b">Objektorienterede løsninger</h2>
+<div class="outline-text-2" id="text-org2273a0b">
 <p>
 Objektorienteret programmering er et <b>paradigme</b> inden for programmering. De allerførste idéer til OOP så man i 1950 og 1960'erne i det akademiske miljø, hvor det måske kunne bruges til forskning i kunstig intelligens. I 1970'erne så man sproget <b>smalltalk</b> for første gang, som har påvirket stort se alle efterfølgende OOP-sprog. I 1980'erne opstod <b>C++</b>, hvor <b>Bjarne Stroustrup</b> udvidede almindelig <b>C</b> til at være objektorienteret. I 1990'erne blev objektorienteret programmering det dominerende paradigme, og man så de første versioner af f.eks. <b>java</b> og <b>python</b>. <b>Java</b> var stærkt inspireret af <b>C++</b> i syntaks, mens <b>python</b> havde meget af sin inspiration fra <b>smalltalk</b>.
 </p>
 </div>
 
-<div id="outline-container-org07d3b34" class="outline-3">
-<h3 id="org07d3b34">OOP for dummies</h3>
-<div class="outline-text-3" id="text-org07d3b34">
+<div id="outline-container-orgf518728" class="outline-3">
+<h3 id="orgf518728">OOP for dummies</h3>
+<div class="outline-text-3" id="text-orgf518728">
 <p>
 I OOP skriver man generelle <b>klasser</b> og opretter specifikke <b>objekter</b> på baggrund af disse klasser. I en klasse/et objekt kan man gemme værdier og funktioner, som knytter sig særligt til klassen. En person kunne være et godt eksempel på en klasse. En person <b>har</b> bl.a. et navn, en alder og køn og <b>kan</b> f.eks. give en hilsen. Alt hvad en klasse <b>har</b> kaldes <b>attributter</b>, <b>felter</b> eller <b>variable</b> afhængig af sproget, og der skelnes også mellem klasse-variable og instans-variable. Alt hvad en klasse/et objekt kan kaldes <b>metoder</b>. Metoder er det samme som funktioner, men gælder for klassen/objektet. Objekter er <b>instanser</b> af klasser. Tænk på klassen som <b>idéen/blueprintet</b> mens objektet er den virkelige "ting". I virkeligheden er <b>Alice</b> og <b>Bob</b> er to forskellige personer. I OOP vil de derfor være to forskellige <b>objekter</b> af den samme <b>klasse</b>, som her hedder <b>Person</b>. 
 </p>
@@ -708,9 +708,9 @@ Det bliver meget nemmere at forstå, når vi gennemgår eksemplerne.
 </div>
 </div>
 
-<div id="outline-container-org965e38c" class="outline-3">
-<h3 id="org965e38c">Den rette linje - OOP</h3>
-<div class="outline-text-3" id="text-org965e38c">
+<div id="outline-container-org5d92226" class="outline-3">
+<h3 id="org5d92226">Den rette linje - OOP</h3>
+<div class="outline-text-3" id="text-org5d92226">
 <p>
 Her er en simpel implementation af den rette linje som en klasse/objekt.
 Der oprettes en klasse for den rette linje fra bunden, mens der skabes en ny klasse gennem <b>nedarving</b>, som skal repræsentere selve vinduet og animationen i <code>arcade</code>.
@@ -721,70 +721,70 @@ Lad os først demonstrere, hvad koden gør. Bagefter kan vi gennemgå den.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #0000FF;">import</span> arcade
-<span style="color: #BA36A5;">BREDDE</span> = 800
-<span style="color: #BA36A5;">HOEJDE</span> = 600
-<span style="color: #BA36A5;">SPORLAENGDE</span> = 200
+<pre class="src src-python"><span style="color: #c48702; font-weight: bold;">import</span> arcade
+<span style="color: #6fafff;">BREDDE</span> = 800
+<span style="color: #6fafff;">HOEJDE</span> = 600
+<span style="color: #6fafff;">SPORLAENGDE</span> = 200
 
-<span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Ret_Linje</span>:
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">__init__</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, fast_punkt, retningsvektor, farve, sporlaengde = <span style="color: #D0372D;">None</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.fast_punkt = fast_punkt
-        <span style="color: #0000FF;">self</span>.retningsvektor = retningsvektor
-        <span style="color: #0000FF;">self</span>.punkt = <span style="color: #0000FF;">self</span>.fast_punkt
-        <span style="color: #0000FF;">self</span>.farve = farve
-        <span style="color: #0000FF;">self</span>.sporlaengde = sporlaengde
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor = <span style="color: #006FE0;">list</span><span style="color: #707183;">()</span>
+<span style="color: #c48702; font-weight: bold;">class</span> <span style="color: #2fa526;">Ret_Linje</span>:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">__init__</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, fast_punkt, retningsvektor, farve, sporlaengde = <span style="color: #64aa0f;">None</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.fast_punkt = fast_punkt
+        <span style="color: #c48702; font-weight: bold;">self</span>.retningsvektor = retningsvektor
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = <span style="color: #c48702; font-weight: bold;">self</span>.fast_punkt
+        <span style="color: #c48702; font-weight: bold;">self</span>.farve = farve
+        <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde = sporlaengde
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor = <span style="color: #ff7a7f; font-weight: bold;">list</span><span style="color: #d0730f;">()</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">opdater</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, delta_tid<span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.append<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.punkt<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde <span style="color: #0000FF;">and</span> <span style="color: #006FE0;">len</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.spor<span style="color: #707183;">)</span> &gt;= <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.pop<span style="color: #707183;">(</span>0<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">opdater</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, delta_tid<span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.append<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.punkt<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde <span style="color: #c48702; font-weight: bold;">and</span> <span style="color: #ff7a7f; font-weight: bold;">len</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.spor<span style="color: #d0730f;">)</span> &gt;= <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.pop<span style="color: #d0730f;">(</span>0<span style="color: #d0730f;">)</span>
         
-        x, y = <span style="color: #0000FF;">self</span>.punkt
-        vx, vy = <span style="color: #0000FF;">self</span>.retningsvektor
+        x, y = <span style="color: #c48702; font-weight: bold;">self</span>.punkt
+        vx, vy = <span style="color: #c48702; font-weight: bold;">self</span>.retningsvektor
         x += vx * delta_tid
         y += vy * delta_tid
-        <span style="color: #0000FF;">self</span>.punkt = <span style="color: #707183;">(</span>x, y<span style="color: #707183;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = <span style="color: #d0730f;">(</span>x, y<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">tegn</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        x, y = <span style="color: #0000FF;">self</span>.punkt
-        arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 5, <span style="color: #0000FF;">self</span>.farve<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">for</span> punkt <span style="color: #0000FF;">in</span> <span style="color: #0000FF;">self</span>.spor:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">tegn</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        x, y = <span style="color: #c48702; font-weight: bold;">self</span>.punkt
+        arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 5, <span style="color: #c48702; font-weight: bold;">self</span>.farve<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">for</span> punkt <span style="color: #c48702; font-weight: bold;">in</span> <span style="color: #c48702; font-weight: bold;">self</span>.spor:
             x, y = punkt
-            arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 2, <span style="color: #0000FF;">self</span>.farve<span style="color: #707183;">)</span>
+            arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 2, <span style="color: #c48702; font-weight: bold;">self</span>.farve<span style="color: #d0730f;">)</span>
 
-<span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Vindue</span><span style="color: #707183;">(</span>arcade.Window<span style="color: #707183;">)</span>:
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">__init__</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, width, height, title<span style="color: #707183;">)</span>:
-        <span style="color: #006FE0;">super</span><span style="color: #707183;">()</span>.__init__<span style="color: #707183;">(</span>width, height, title<span style="color: #707183;">)</span>
-        arcade.set_background_color<span style="color: #707183;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #707183;">)</span>
+<span style="color: #c48702; font-weight: bold;">class</span> <span style="color: #2fa526;">Vindue</span><span style="color: #d0730f;">(</span>arcade.Window<span style="color: #d0730f;">)</span>:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">__init__</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, width, height, title<span style="color: #d0730f;">)</span>:
+        <span style="color: #ff7a7f; font-weight: bold;">super</span><span style="color: #d0730f;">()</span>.__init__<span style="color: #d0730f;">(</span>width, height, title<span style="color: #d0730f;">)</span>
+        arcade.set_background_color<span style="color: #d0730f;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">setup</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.ret_linje = Ret_Linje<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>100, 50<span style="color: #7388D6;">)</span>, <span style="color: #7388D6;">(</span>100, 50<span style="color: #7388D6;">)</span>, arcade.csscolor.RED, 100<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">setup</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.ret_linje = Ret_Linje<span style="color: #d0730f;">(</span><span style="color: #64aa0f;">(</span>100, 50<span style="color: #64aa0f;">)</span>, <span style="color: #64aa0f;">(</span>100, 50<span style="color: #64aa0f;">)</span>, arcade.csscolor.RED, 100<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">update</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, delta_tid<span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.ret_linje.opdater<span style="color: #707183;">(</span>delta_tid<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">update</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, delta_tid<span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.ret_linje.opdater<span style="color: #d0730f;">(</span>delta_tid<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">on_draw</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.clear<span style="color: #707183;">()</span>
-        <span style="color: #0000FF;">self</span>.ret_linje.tegn<span style="color: #707183;">()</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">on_draw</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.clear<span style="color: #d0730f;">()</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.ret_linje.tegn<span style="color: #d0730f;">()</span>
 
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">main</span><span style="color: #707183;">()</span>:
-    vindue = Vindue<span style="color: #707183;">(</span>BREDDE, HOEJDE, <span style="color: #008000;">"Ret linje som klasse"</span><span style="color: #707183;">)</span>
-    vindue.setup<span style="color: #707183;">()</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">main</span><span style="color: #d0730f;">()</span>:
+    vindue = Vindue<span style="color: #d0730f;">(</span>BREDDE, HOEJDE, <span style="color: #f06a3f;">"Ret linje som klasse"</span><span style="color: #d0730f;">)</span>
+    vindue.setup<span style="color: #d0730f;">()</span>
 
-    arcade.run<span style="color: #707183;">()</span>
+    arcade.run<span style="color: #d0730f;">()</span>
 
-main<span style="color: #707183;">()</span>
+main<span style="color: #d0730f;">()</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge691f84" class="outline-3">
-<h3 id="orge691f84">Tilhørende klassediagram</h3>
-<div class="outline-text-3" id="text-orge691f84">
+<div id="outline-container-org6c2233c" class="outline-3">
+<h3 id="org6c2233c">Tilhørende klassediagram</h3>
+<div class="outline-text-3" id="text-org6c2233c">
 <p>
 Når man skal dokumentere/beskrive klasser/objekter, anvender man <b>klassediagrammer</b>. Klassediagrammer skrives i UML (Unified Modeling Languange) og kan både beskrive, hvordan klasser er opbygget og hvordan forskellige klasser relaterer sig til hinanden.
 </p>
@@ -797,85 +797,102 @@ I det følgende eksempel kan I se "koden" til at danne klassediagrammet for den 
 Læg mærke til at klassediagrammet er inddelt i 3 dele. Første del angiver klassen navn. Anden del angiver klassen variable, mens tredje del angiver klassen metoder. Man kan kende forskel på variable og metoder ved at se, om der er parenteser efter eller ej. Metoder er funktioner, som knytter sig til et objekt/en klasse, og har derfor parenteser efter sig.
 </p>
 
+<div class="org-src-container">
+<pre class="src src-plantuml"><span style="color: #c48702; font-weight: bold;">@startuml</span>
+<span style="color: #2fa526;">class</span> Ret_Linje <span style="color: #d0730f;">{</span>
+<span style="color: #64aa0f;">{</span>field<span style="color: #64aa0f;">}</span> +fast_punkt : <span style="color: #64aa0f;">(</span>float, float<span style="color: #64aa0f;">)</span> 
+<span style="color: #64aa0f;">{</span>field<span style="color: #64aa0f;">}</span> +retningsvektor : <span style="color: #64aa0f;">(</span>float, float<span style="color: #64aa0f;">)</span>
+<span style="color: #64aa0f;">{</span>field<span style="color: #64aa0f;">}</span> +punkt : <span style="color: #64aa0f;">(</span>float, float<span style="color: #64aa0f;">)</span>
+<span style="color: #64aa0f;">{</span>field<span style="color: #64aa0f;">}</span> +farve : <span style="color: #64aa0f;">(</span>int, int, int<span style="color: #64aa0f;">)</span>
+<span style="color: #64aa0f;">{</span>field<span style="color: #64aa0f;">}</span> +sporlaengde : int
+<span style="color: #64aa0f;">{</span>field<span style="color: #64aa0f;">}</span> +spor : <span style="color: #64aa0f;">[</span><span style="color: #ef656a;">(</span>float, float<span style="color: #ef656a;">)</span><span style="color: #64aa0f;">]</span>
+<span style="color: #64aa0f;">{</span>method<span style="color: #64aa0f;">}</span> +__init__<span style="color: #64aa0f;">(</span>fast_punkt, retningvektor, farve, sporlaengde<span style="color: #64aa0f;">)</span>
+<span style="color: #64aa0f;">{</span>method<span style="color: #64aa0f;">}</span> +opdater<span style="color: #64aa0f;">(</span>delta_tid<span style="color: #64aa0f;">)</span>
+<span style="color: #64aa0f;">{</span>method<span style="color: #64aa0f;">}</span> +tegn<span style="color: #64aa0f;">()</span>
+<span style="color: #d0730f;">}</span>
+<span style="color: #c48702; font-weight: bold;">@enduml</span>
+</pre>
+</div>
 
-<div id="orgab80773" class="figure">
+
+<div id="org8037561" class="figure">
 <p><img src="img/Ret_linje_klassediagram.png" alt="Ret_linje_klassediagram.png" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4e0adf7" class="outline-3">
-<h3 id="org4e0adf7">Cirklen</h3>
-<div class="outline-text-3" id="text-org4e0adf7">
+<div id="outline-container-orged2b17c" class="outline-3">
+<h3 id="orged2b17c">Cirklen</h3>
+<div class="outline-text-3" id="text-orged2b17c">
 <p>
 Her ser I en implementering af cirklen vha. OOP. Vi demonstrerer lige først, hvad programmet gør.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #0000FF;">import</span> arcade
-<span style="color: #0000FF;">import</span> math
-<span style="color: #BA36A5;">BREDDE</span> = 800
-<span style="color: #BA36A5;">HOEJDE</span> = 600
-<span style="color: #BA36A5;">SPORLAENGDE</span> = 200
+<pre class="src src-python"><span style="color: #c48702; font-weight: bold;">import</span> arcade
+<span style="color: #c48702; font-weight: bold;">import</span> math
+<span style="color: #6fafff;">BREDDE</span> = 800
+<span style="color: #6fafff;">HOEJDE</span> = 600
+<span style="color: #6fafff;">SPORLAENGDE</span> = 200
 
-<span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Cirkel</span>:
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">__init__</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, centrum, radius, vinkelhastighed, vinkel, farve, sporlaengde = <span style="color: #D0372D;">None</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.centrum = centrum
-        <span style="color: #0000FF;">self</span>.radius = radius
-        <span style="color: #0000FF;">self</span>.vinkelhastighed = vinkelhastighed
-        <span style="color: #0000FF;">self</span>.vinkel = vinkel
-        <span style="color: #0000FF;">self</span>.punkt = centrum<span style="color: #707183;">[</span>0<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.cos<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>, centrum<span style="color: #707183;">[</span>1<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.sin<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">self</span>.farve = farve
-        <span style="color: #0000FF;">self</span>.sporlaengde = sporlaengde
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor = <span style="color: #006FE0;">list</span><span style="color: #707183;">()</span>
+<span style="color: #c48702; font-weight: bold;">class</span> <span style="color: #2fa526;">Cirkel</span>:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">__init__</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, centrum, radius, vinkelhastighed, vinkel, farve, sporlaengde = <span style="color: #64aa0f;">None</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.centrum = centrum
+        <span style="color: #c48702; font-weight: bold;">self</span>.radius = radius
+        <span style="color: #c48702; font-weight: bold;">self</span>.vinkelhastighed = vinkelhastighed
+        <span style="color: #c48702; font-weight: bold;">self</span>.vinkel = vinkel
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = centrum<span style="color: #d0730f;">[</span>0<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.cos<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>, centrum<span style="color: #d0730f;">[</span>1<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.sin<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.farve = farve
+        <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde = sporlaengde
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor = <span style="color: #ff7a7f; font-weight: bold;">list</span><span style="color: #d0730f;">()</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">updater</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, delta_tid<span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.append<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.punkt<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde <span style="color: #0000FF;">and</span> <span style="color: #006FE0;">len</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.spor<span style="color: #707183;">)</span> &gt;= <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.pop<span style="color: #707183;">(</span>0<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">updater</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, delta_tid<span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.append<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.punkt<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde <span style="color: #c48702; font-weight: bold;">and</span> <span style="color: #ff7a7f; font-weight: bold;">len</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.spor<span style="color: #d0730f;">)</span> &gt;= <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.pop<span style="color: #d0730f;">(</span>0<span style="color: #d0730f;">)</span>
         
-        <span style="color: #0000FF;">self</span>.vinkel += <span style="color: #0000FF;">self</span>.vinkelhastighed * delta_tid
-        <span style="color: #0000FF;">self</span>.punkt = <span style="color: #0000FF;">self</span>.centrum<span style="color: #707183;">[</span>0<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.cos<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>, <span style="color: #0000FF;">self</span>.centrum<span style="color: #707183;">[</span>1<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.sin<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.vinkel += <span style="color: #c48702; font-weight: bold;">self</span>.vinkelhastighed * delta_tid
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = <span style="color: #c48702; font-weight: bold;">self</span>.centrum<span style="color: #d0730f;">[</span>0<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.cos<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>, <span style="color: #c48702; font-weight: bold;">self</span>.centrum<span style="color: #d0730f;">[</span>1<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.sin<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">tegn</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        x, y = <span style="color: #0000FF;">self</span>.punkt
-        arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 5, <span style="color: #0000FF;">self</span>.farve<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">for</span> punkt <span style="color: #0000FF;">in</span> <span style="color: #0000FF;">self</span>.spor:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">tegn</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        x, y = <span style="color: #c48702; font-weight: bold;">self</span>.punkt
+        arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 5, <span style="color: #c48702; font-weight: bold;">self</span>.farve<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">for</span> punkt <span style="color: #c48702; font-weight: bold;">in</span> <span style="color: #c48702; font-weight: bold;">self</span>.spor:
             x, y = punkt
-            arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 2, <span style="color: #0000FF;">self</span>.farve<span style="color: #707183;">)</span>
+            arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 2, <span style="color: #c48702; font-weight: bold;">self</span>.farve<span style="color: #d0730f;">)</span>
 
-<span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Vindue</span><span style="color: #707183;">(</span>arcade.Window<span style="color: #707183;">)</span>:
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">__init__</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, width, height, title<span style="color: #707183;">)</span>:
-        <span style="color: #006FE0;">super</span><span style="color: #707183;">()</span>.__init__<span style="color: #707183;">(</span>width, height, title<span style="color: #707183;">)</span>
-        arcade.set_background_color<span style="color: #707183;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #707183;">)</span>
+<span style="color: #c48702; font-weight: bold;">class</span> <span style="color: #2fa526;">Vindue</span><span style="color: #d0730f;">(</span>arcade.Window<span style="color: #d0730f;">)</span>:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">__init__</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, width, height, title<span style="color: #d0730f;">)</span>:
+        <span style="color: #ff7a7f; font-weight: bold;">super</span><span style="color: #d0730f;">()</span>.__init__<span style="color: #d0730f;">(</span>width, height, title<span style="color: #d0730f;">)</span>
+        arcade.set_background_color<span style="color: #d0730f;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">setup</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.cirkel = Cirkel<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>400, 300<span style="color: #7388D6;">)</span>, 100, 5, 0, arcade.csscolor.RED, 100<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">setup</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.cirkel = Cirkel<span style="color: #d0730f;">(</span><span style="color: #64aa0f;">(</span>400, 300<span style="color: #64aa0f;">)</span>, 100, 5, 0, arcade.csscolor.RED, 100<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">update</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, delta_tid<span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.cirkel.updater<span style="color: #707183;">(</span>delta_tid<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">update</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, delta_tid<span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.cirkel.updater<span style="color: #d0730f;">(</span>delta_tid<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">on_draw</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.clear<span style="color: #707183;">()</span>
-        <span style="color: #0000FF;">self</span>.cirkel.tegn<span style="color: #707183;">()</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">on_draw</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.clear<span style="color: #d0730f;">()</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.cirkel.tegn<span style="color: #d0730f;">()</span>
 
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">main</span><span style="color: #707183;">()</span>:
-    vindue = Vindue<span style="color: #707183;">(</span>BREDDE, HOEJDE, <span style="color: #008000;">"Cirkel som klasse"</span><span style="color: #707183;">)</span>
-    vindue.setup<span style="color: #707183;">()</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">main</span><span style="color: #d0730f;">()</span>:
+    vindue = Vindue<span style="color: #d0730f;">(</span>BREDDE, HOEJDE, <span style="color: #f06a3f;">"Cirkel som klasse"</span><span style="color: #d0730f;">)</span>
+    vindue.setup<span style="color: #d0730f;">()</span>
 
-    arcade.run<span style="color: #707183;">()</span>
+    arcade.run<span style="color: #d0730f;">()</span>
 
-main<span style="color: #707183;">()</span>
+main<span style="color: #d0730f;">()</span>
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgbb41ab0" class="outline-4">
-<h4 id="orgbb41ab0">Opgave</h4>
-<div class="outline-text-4" id="text-orgbb41ab0">
+<div id="outline-container-org54d8d3c" class="outline-4">
+<h4 id="org54d8d3c">Opgave</h4>
+<div class="outline-text-4" id="text-org54d8d3c">
 <p>
 I skal selv danne et <b>klassediagram</b> for cirklen.
 </p>
@@ -887,9 +904,9 @@ I skal selv danne et <b>klassediagram</b> for cirklen.
 </div>
 </div>
 
-<div id="outline-container-org3e3b3a9" class="outline-3">
-<h3 id="org3e3b3a9">Sammensat bevægelse med objekter</h3>
-<div class="outline-text-3" id="text-org3e3b3a9">
+<div id="outline-container-org7a8d7b3" class="outline-3">
+<h3 id="org7a8d7b3">Sammensat bevægelse med objekter</h3>
+<div class="outline-text-3" id="text-org7a8d7b3">
 <p>
 Hvis man nu skal danne en sammensat bevægelse af den rette linje og cirklen fra tidligere, så er der <b>2</b> oplagte måder at gøre det på.
 </p>
@@ -908,214 +925,214 @@ Herefter kan man så tegne den <b>sammensatte</b> bevægelse ved at lægge koord
 </ol>
 </div>
 
-<div id="outline-container-org9747dca" class="outline-4">
-<h4 id="org9747dca">1. metode</h4>
-<div class="outline-text-4" id="text-org9747dca">
+<div id="outline-container-org7fa007f" class="outline-4">
+<h4 id="org7fa007f">1. metode</h4>
+<div class="outline-text-4" id="text-org7fa007f">
 <p>
 Her opdateres cirklens centrum for hver iteration.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #0000FF;">import</span> arcade
-<span style="color: #0000FF;">import</span> math
-<span style="color: #BA36A5;">BREDDE</span> = 800
-<span style="color: #BA36A5;">HOEJDE</span> = 600
-<span style="color: #BA36A5;">SPORLAENGDE</span> = 200
+<pre class="src src-python"><span style="color: #c48702; font-weight: bold;">import</span> arcade
+<span style="color: #c48702; font-weight: bold;">import</span> math
+<span style="color: #6fafff;">BREDDE</span> = 800
+<span style="color: #6fafff;">HOEJDE</span> = 600
+<span style="color: #6fafff;">SPORLAENGDE</span> = 200
 
-<span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Ret_Linje</span>:
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">__init__</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, fast_punkt, retningsvektor, farve, sporlaengde = <span style="color: #D0372D;">None</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.fast_punkt = fast_punkt
-        <span style="color: #0000FF;">self</span>.retningsvektor = retningsvektor
-        <span style="color: #0000FF;">self</span>.punkt = <span style="color: #0000FF;">self</span>.fast_punkt
-        <span style="color: #0000FF;">self</span>.farve = farve
-        <span style="color: #0000FF;">self</span>.sporlaengde = sporlaengde
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor = <span style="color: #006FE0;">list</span><span style="color: #707183;">()</span>
+<span style="color: #c48702; font-weight: bold;">class</span> <span style="color: #2fa526;">Ret_Linje</span>:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">__init__</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, fast_punkt, retningsvektor, farve, sporlaengde = <span style="color: #64aa0f;">None</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.fast_punkt = fast_punkt
+        <span style="color: #c48702; font-weight: bold;">self</span>.retningsvektor = retningsvektor
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = <span style="color: #c48702; font-weight: bold;">self</span>.fast_punkt
+        <span style="color: #c48702; font-weight: bold;">self</span>.farve = farve
+        <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde = sporlaengde
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor = <span style="color: #ff7a7f; font-weight: bold;">list</span><span style="color: #d0730f;">()</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">opdater</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, delta_tid<span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.append<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.punkt<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde <span style="color: #0000FF;">and</span> <span style="color: #006FE0;">len</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.spor<span style="color: #707183;">)</span> &gt;= <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.pop<span style="color: #707183;">(</span>0<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">opdater</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, delta_tid<span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.append<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.punkt<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde <span style="color: #c48702; font-weight: bold;">and</span> <span style="color: #ff7a7f; font-weight: bold;">len</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.spor<span style="color: #d0730f;">)</span> &gt;= <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.pop<span style="color: #d0730f;">(</span>0<span style="color: #d0730f;">)</span>
         
-        x, y = <span style="color: #0000FF;">self</span>.punkt
-        vx, vy = <span style="color: #0000FF;">self</span>.retningsvektor
+        x, y = <span style="color: #c48702; font-weight: bold;">self</span>.punkt
+        vx, vy = <span style="color: #c48702; font-weight: bold;">self</span>.retningsvektor
         x += vx * delta_tid
         y += vy * delta_tid
-        <span style="color: #0000FF;">self</span>.punkt = <span style="color: #707183;">(</span>x, y<span style="color: #707183;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = <span style="color: #d0730f;">(</span>x, y<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">tegn</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        x, y = <span style="color: #0000FF;">self</span>.punkt
-        arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 5, <span style="color: #0000FF;">self</span>.farve<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">for</span> punkt <span style="color: #0000FF;">in</span> <span style="color: #0000FF;">self</span>.spor:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">tegn</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        x, y = <span style="color: #c48702; font-weight: bold;">self</span>.punkt
+        arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 5, <span style="color: #c48702; font-weight: bold;">self</span>.farve<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">for</span> punkt <span style="color: #c48702; font-weight: bold;">in</span> <span style="color: #c48702; font-weight: bold;">self</span>.spor:
             x, y = punkt
-            arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 2, <span style="color: #0000FF;">self</span>.farve<span style="color: #707183;">)</span>
+            arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 2, <span style="color: #c48702; font-weight: bold;">self</span>.farve<span style="color: #d0730f;">)</span>
 
-<span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Cirkel</span>:
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">__init__</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, centrum, radius, vinkelhastighed, vinkel, farve, sporlaengde = <span style="color: #D0372D;">None</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.centrum = centrum
-        <span style="color: #0000FF;">self</span>.radius = radius
-        <span style="color: #0000FF;">self</span>.vinkelhastighed = vinkelhastighed
-        <span style="color: #0000FF;">self</span>.vinkel = vinkel
-        <span style="color: #0000FF;">self</span>.punkt = centrum<span style="color: #707183;">[</span>0<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.cos<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>, centrum<span style="color: #707183;">[</span>1<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.sin<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">self</span>.farve = farve
-        <span style="color: #0000FF;">self</span>.sporlaengde = sporlaengde
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor = <span style="color: #006FE0;">list</span><span style="color: #707183;">()</span>
+<span style="color: #c48702; font-weight: bold;">class</span> <span style="color: #2fa526;">Cirkel</span>:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">__init__</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, centrum, radius, vinkelhastighed, vinkel, farve, sporlaengde = <span style="color: #64aa0f;">None</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.centrum = centrum
+        <span style="color: #c48702; font-weight: bold;">self</span>.radius = radius
+        <span style="color: #c48702; font-weight: bold;">self</span>.vinkelhastighed = vinkelhastighed
+        <span style="color: #c48702; font-weight: bold;">self</span>.vinkel = vinkel
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = centrum<span style="color: #d0730f;">[</span>0<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.cos<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>, centrum<span style="color: #d0730f;">[</span>1<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.sin<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.farve = farve
+        <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde = sporlaengde
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor = <span style="color: #ff7a7f; font-weight: bold;">list</span><span style="color: #d0730f;">()</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">opdater</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, delta_tid<span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.append<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.punkt<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde <span style="color: #0000FF;">and</span> <span style="color: #006FE0;">len</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.spor<span style="color: #707183;">)</span> &gt;= <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.pop<span style="color: #707183;">(</span>0<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">opdater</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, delta_tid<span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.append<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.punkt<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde <span style="color: #c48702; font-weight: bold;">and</span> <span style="color: #ff7a7f; font-weight: bold;">len</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.spor<span style="color: #d0730f;">)</span> &gt;= <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.pop<span style="color: #d0730f;">(</span>0<span style="color: #d0730f;">)</span>
         
-        <span style="color: #0000FF;">self</span>.vinkel += <span style="color: #0000FF;">self</span>.vinkelhastighed * delta_tid
-        <span style="color: #0000FF;">self</span>.punkt = <span style="color: #0000FF;">self</span>.centrum<span style="color: #707183;">[</span>0<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.cos<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>, <span style="color: #0000FF;">self</span>.centrum<span style="color: #707183;">[</span>1<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.sin<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.vinkel += <span style="color: #c48702; font-weight: bold;">self</span>.vinkelhastighed * delta_tid
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = <span style="color: #c48702; font-weight: bold;">self</span>.centrum<span style="color: #d0730f;">[</span>0<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.cos<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>, <span style="color: #c48702; font-weight: bold;">self</span>.centrum<span style="color: #d0730f;">[</span>1<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.sin<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">tegn</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        x, y = <span style="color: #0000FF;">self</span>.punkt
-        arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 5, <span style="color: #0000FF;">self</span>.farve<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">for</span> punkt <span style="color: #0000FF;">in</span> <span style="color: #0000FF;">self</span>.spor:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">tegn</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        x, y = <span style="color: #c48702; font-weight: bold;">self</span>.punkt
+        arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 5, <span style="color: #c48702; font-weight: bold;">self</span>.farve<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">for</span> punkt <span style="color: #c48702; font-weight: bold;">in</span> <span style="color: #c48702; font-weight: bold;">self</span>.spor:
             x, y = punkt
-            arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 2, <span style="color: #0000FF;">self</span>.farve<span style="color: #707183;">)</span>
+            arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 2, <span style="color: #c48702; font-weight: bold;">self</span>.farve<span style="color: #d0730f;">)</span>
 
-<span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Vindue</span><span style="color: #707183;">(</span>arcade.Window<span style="color: #707183;">)</span>:
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">__init__</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, width, height, title<span style="color: #707183;">)</span>:
-        <span style="color: #006FE0;">super</span><span style="color: #707183;">()</span>.__init__<span style="color: #707183;">(</span>width, height, title<span style="color: #707183;">)</span>
-        arcade.set_background_color<span style="color: #707183;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #707183;">)</span>
+<span style="color: #c48702; font-weight: bold;">class</span> <span style="color: #2fa526;">Vindue</span><span style="color: #d0730f;">(</span>arcade.Window<span style="color: #d0730f;">)</span>:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">__init__</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, width, height, title<span style="color: #d0730f;">)</span>:
+        <span style="color: #ff7a7f; font-weight: bold;">super</span><span style="color: #d0730f;">()</span>.__init__<span style="color: #d0730f;">(</span>width, height, title<span style="color: #d0730f;">)</span>
+        arcade.set_background_color<span style="color: #d0730f;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">setup</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.ret_linje = Ret_Linje<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>50, 500<span style="color: #7388D6;">)</span>, <span style="color: #7388D6;">(</span>20,-10<span style="color: #7388D6;">)</span>, arcade.csscolor.YELLOW, 100<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">self</span>.cirkel = Cirkel<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.ret_linje.punkt, 20, -5, 0, arcade.csscolor.GREEN, 100<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">setup</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.ret_linje = Ret_Linje<span style="color: #d0730f;">(</span><span style="color: #64aa0f;">(</span>50, 500<span style="color: #64aa0f;">)</span>, <span style="color: #64aa0f;">(</span>20,-10<span style="color: #64aa0f;">)</span>, arcade.csscolor.YELLOW, 100<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.cirkel = Cirkel<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.ret_linje.punkt, 20, -5, 0, arcade.csscolor.GREEN, 100<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">update</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, delta_tid<span style="color: #707183;">)</span>:
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Opdaterer cirklens centrum til at v&#230;re linjens punkt</span>
-        <span style="color: #0000FF;">self</span>.cirkel.centrum = <span style="color: #0000FF;">self</span>.ret_linje.punkt
-        <span style="color: #0000FF;">self</span>.ret_linje.opdater<span style="color: #707183;">(</span>delta_tid<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">self</span>.cirkel.opdater<span style="color: #707183;">(</span>delta_tid<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">update</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, delta_tid<span style="color: #d0730f;">)</span>:
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Opdaterer cirklens centrum til at v&#230;re linjens punkt</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.cirkel.centrum = <span style="color: #c48702; font-weight: bold;">self</span>.ret_linje.punkt
+        <span style="color: #c48702; font-weight: bold;">self</span>.ret_linje.opdater<span style="color: #d0730f;">(</span>delta_tid<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.cirkel.opdater<span style="color: #d0730f;">(</span>delta_tid<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">on_draw</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.clear<span style="color: #707183;">()</span>
-        <span style="color: #0000FF;">self</span>.cirkel.tegn<span style="color: #707183;">()</span>
-        <span style="color: #0000FF;">self</span>.ret_linje.tegn<span style="color: #707183;">()</span>
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">main</span><span style="color: #707183;">()</span>:
-    vindue = Vindue<span style="color: #707183;">(</span>BREDDE, HOEJDE, <span style="color: #008000;">"Sammensat bev&#230;gelse af ret linje og cirkel"</span><span style="color: #707183;">)</span>
-    vindue.setup<span style="color: #707183;">()</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">on_draw</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.clear<span style="color: #d0730f;">()</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.cirkel.tegn<span style="color: #d0730f;">()</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.ret_linje.tegn<span style="color: #d0730f;">()</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">main</span><span style="color: #d0730f;">()</span>:
+    vindue = Vindue<span style="color: #d0730f;">(</span>BREDDE, HOEJDE, <span style="color: #f06a3f;">"Sammensat bev&#230;gelse af ret linje og cirkel"</span><span style="color: #d0730f;">)</span>
+    vindue.setup<span style="color: #d0730f;">()</span>
 
-    arcade.run<span style="color: #707183;">()</span>
+    arcade.run<span style="color: #d0730f;">()</span>
 
-main<span style="color: #707183;">()</span>
+main<span style="color: #d0730f;">()</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org9cae935" class="outline-4">
-<h4 id="org9cae935">2. metode</h4>
-<div class="outline-text-4" id="text-org9cae935">
+<div id="outline-container-org785f06a" class="outline-4">
+<h4 id="org785f06a">2. metode</h4>
+<div class="outline-text-4" id="text-org785f06a">
 <p>
 Her oprettes der en ret linje og en cirkel, som bare bevæger sig rundt om origo. Den sammensatte bevægelse tegnes ved "bare" at lægge de to bevægelser sammen. Selve animationen foregår uden for objekterne. Sporene er fjernet fra selve bevægelsesklasserne og er implementeret i Vindues-klassen i stedet for.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #0000FF;">import</span> arcade
-<span style="color: #0000FF;">import</span> math
-<span style="color: #BA36A5;">BREDDE</span> = 800
-<span style="color: #BA36A5;">HOEJDE</span> = 600
-<span style="color: #BA36A5;">SPORLAENGDE</span> = 200
+<pre class="src src-python"><span style="color: #c48702; font-weight: bold;">import</span> arcade
+<span style="color: #c48702; font-weight: bold;">import</span> math
+<span style="color: #6fafff;">BREDDE</span> = 800
+<span style="color: #6fafff;">HOEJDE</span> = 600
+<span style="color: #6fafff;">SPORLAENGDE</span> = 200
 
-<span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Ret_Linje</span>:
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">__init__</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, fast_punkt, retningsvektor, farve, sporlaengde = <span style="color: #D0372D;">None</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.fast_punkt = fast_punkt
-        <span style="color: #0000FF;">self</span>.retningsvektor = retningsvektor
-        <span style="color: #0000FF;">self</span>.punkt = <span style="color: #0000FF;">self</span>.fast_punkt
-        <span style="color: #0000FF;">self</span>.farve = farve
-        <span style="color: #0000FF;">self</span>.sporlaengde = sporlaengde
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor = <span style="color: #006FE0;">list</span><span style="color: #707183;">()</span>
+<span style="color: #c48702; font-weight: bold;">class</span> <span style="color: #2fa526;">Ret_Linje</span>:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">__init__</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, fast_punkt, retningsvektor, farve, sporlaengde = <span style="color: #64aa0f;">None</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.fast_punkt = fast_punkt
+        <span style="color: #c48702; font-weight: bold;">self</span>.retningsvektor = retningsvektor
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = <span style="color: #c48702; font-weight: bold;">self</span>.fast_punkt
+        <span style="color: #c48702; font-weight: bold;">self</span>.farve = farve
+        <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde = sporlaengde
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor = <span style="color: #ff7a7f; font-weight: bold;">list</span><span style="color: #d0730f;">()</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">opdater</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, delta_tid<span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.append<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.punkt<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde <span style="color: #0000FF;">and</span> <span style="color: #006FE0;">len</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.spor<span style="color: #707183;">)</span> &gt;= <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.pop<span style="color: #707183;">(</span>0<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">opdater</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, delta_tid<span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.append<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.punkt<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde <span style="color: #c48702; font-weight: bold;">and</span> <span style="color: #ff7a7f; font-weight: bold;">len</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.spor<span style="color: #d0730f;">)</span> &gt;= <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.pop<span style="color: #d0730f;">(</span>0<span style="color: #d0730f;">)</span>
         
-        x, y = <span style="color: #0000FF;">self</span>.punkt
-        vx, vy = <span style="color: #0000FF;">self</span>.retningsvektor
+        x, y = <span style="color: #c48702; font-weight: bold;">self</span>.punkt
+        vx, vy = <span style="color: #c48702; font-weight: bold;">self</span>.retningsvektor
         x += vx * delta_tid
         y += vy * delta_tid
-        <span style="color: #0000FF;">self</span>.punkt = <span style="color: #707183;">(</span>x, y<span style="color: #707183;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = <span style="color: #d0730f;">(</span>x, y<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">tegn</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        x, y = <span style="color: #0000FF;">self</span>.punkt
-        arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 5, <span style="color: #0000FF;">self</span>.farve<span style="color: #707183;">)</span>
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tidligere tegnede vi ogs&#229; sporet her. Nu er det flyttet til Vinduesklassen</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">tegn</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        x, y = <span style="color: #c48702; font-weight: bold;">self</span>.punkt
+        arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 5, <span style="color: #c48702; font-weight: bold;">self</span>.farve<span style="color: #d0730f;">)</span>
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tidligere tegnede vi ogs&#229; sporet her. Nu er det flyttet til Vinduesklassen</span>
 
-<span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Cirkel</span>:
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">__init__</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, centrum, radius, vinkelhastighed, vinkel, farve, sporlaengde = <span style="color: #D0372D;">None</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.centrum = centrum
-        <span style="color: #0000FF;">self</span>.radius = radius
-        <span style="color: #0000FF;">self</span>.vinkelhastighed = vinkelhastighed
-        <span style="color: #0000FF;">self</span>.vinkel = vinkel
-        <span style="color: #0000FF;">self</span>.punkt = centrum<span style="color: #707183;">[</span>0<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.cos<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>, centrum<span style="color: #707183;">[</span>1<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.sin<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">self</span>.farve = farve
-        <span style="color: #0000FF;">self</span>.sporlaengde = sporlaengde
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor = <span style="color: #006FE0;">list</span><span style="color: #707183;">()</span>
+<span style="color: #c48702; font-weight: bold;">class</span> <span style="color: #2fa526;">Cirkel</span>:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">__init__</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, centrum, radius, vinkelhastighed, vinkel, farve, sporlaengde = <span style="color: #64aa0f;">None</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.centrum = centrum
+        <span style="color: #c48702; font-weight: bold;">self</span>.radius = radius
+        <span style="color: #c48702; font-weight: bold;">self</span>.vinkelhastighed = vinkelhastighed
+        <span style="color: #c48702; font-weight: bold;">self</span>.vinkel = vinkel
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = centrum<span style="color: #d0730f;">[</span>0<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.cos<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>, centrum<span style="color: #d0730f;">[</span>1<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.sin<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.farve = farve
+        <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde = sporlaengde
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor = <span style="color: #ff7a7f; font-weight: bold;">list</span><span style="color: #d0730f;">()</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">opdater</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, delta_tid<span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.append<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.punkt<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">if</span> <span style="color: #0000FF;">self</span>.sporlaengde <span style="color: #0000FF;">and</span> <span style="color: #006FE0;">len</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.spor<span style="color: #707183;">)</span> &gt;= <span style="color: #0000FF;">self</span>.sporlaengde:
-            <span style="color: #0000FF;">self</span>.spor.pop<span style="color: #707183;">(</span>0<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">opdater</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, delta_tid<span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.append<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.punkt<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde <span style="color: #c48702; font-weight: bold;">and</span> <span style="color: #ff7a7f; font-weight: bold;">len</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.spor<span style="color: #d0730f;">)</span> &gt;= <span style="color: #c48702; font-weight: bold;">self</span>.sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.spor.pop<span style="color: #d0730f;">(</span>0<span style="color: #d0730f;">)</span>
         
-        <span style="color: #0000FF;">self</span>.vinkel += <span style="color: #0000FF;">self</span>.vinkelhastighed * delta_tid
-        <span style="color: #0000FF;">self</span>.punkt = <span style="color: #0000FF;">self</span>.centrum<span style="color: #707183;">[</span>0<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.cos<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>, <span style="color: #0000FF;">self</span>.centrum<span style="color: #707183;">[</span>1<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.radius * math.sin<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.vinkel<span style="color: #707183;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.vinkel += <span style="color: #c48702; font-weight: bold;">self</span>.vinkelhastighed * delta_tid
+        <span style="color: #c48702; font-weight: bold;">self</span>.punkt = <span style="color: #c48702; font-weight: bold;">self</span>.centrum<span style="color: #d0730f;">[</span>0<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.cos<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>, <span style="color: #c48702; font-weight: bold;">self</span>.centrum<span style="color: #d0730f;">[</span>1<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.radius * math.sin<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.vinkel<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">tegn</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        x, y = <span style="color: #0000FF;">self</span>.punkt
-        arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 5, <span style="color: #0000FF;">self</span>.farve<span style="color: #707183;">)</span>
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Tidligere tegnede vi ogs&#229; sporet her. Nu er det flyttet til Vinduesklassen</span>
-        <span style="color: #0000FF;">for</span> punkt <span style="color: #0000FF;">in</span> <span style="color: #0000FF;">self</span>.spor:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">tegn</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        x, y = <span style="color: #c48702; font-weight: bold;">self</span>.punkt
+        arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 5, <span style="color: #c48702; font-weight: bold;">self</span>.farve<span style="color: #d0730f;">)</span>
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Tidligere tegnede vi ogs&#229; sporet her. Nu er det flyttet til Vinduesklassen</span>
+        <span style="color: #c48702; font-weight: bold;">for</span> punkt <span style="color: #c48702; font-weight: bold;">in</span> <span style="color: #c48702; font-weight: bold;">self</span>.spor:
             x, y = punkt
-            arcade.draw_circle_filled<span style="color: #707183;">(</span>x, y, 2, <span style="color: #0000FF;">self</span>.farve<span style="color: #707183;">)</span>
+            arcade.draw_circle_filled<span style="color: #d0730f;">(</span>x, y, 2, <span style="color: #c48702; font-weight: bold;">self</span>.farve<span style="color: #d0730f;">)</span>
 
-<span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Vindue</span><span style="color: #707183;">(</span>arcade.Window<span style="color: #707183;">)</span>:
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">__init__</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, width, height, title<span style="color: #707183;">)</span>:
-        <span style="color: #006FE0;">super</span><span style="color: #707183;">()</span>.__init__<span style="color: #707183;">(</span>width, height, title<span style="color: #707183;">)</span>
-        arcade.set_background_color<span style="color: #707183;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #707183;">)</span>
+<span style="color: #c48702; font-weight: bold;">class</span> <span style="color: #2fa526;">Vindue</span><span style="color: #d0730f;">(</span>arcade.Window<span style="color: #d0730f;">)</span>:
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">__init__</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, width, height, title<span style="color: #d0730f;">)</span>:
+        <span style="color: #ff7a7f; font-weight: bold;">super</span><span style="color: #d0730f;">()</span>.__init__<span style="color: #d0730f;">(</span>width, height, title<span style="color: #d0730f;">)</span>
+        arcade.set_background_color<span style="color: #d0730f;">(</span>arcade.csscolor.LIGHT_SKY_BLUE<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">setup</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.ret_linje = Ret_Linje<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>50, 500<span style="color: #7388D6;">)</span>, <span style="color: #7388D6;">(</span>20,-10<span style="color: #7388D6;">)</span>, arcade.csscolor.YELLOW<span style="color: #707183;">)</span>
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Cirklen skal bare bev&#230;ge sig rundt om origo</span>
-        <span style="color: #0000FF;">self</span>.cirkel = Cirkel<span style="color: #707183;">(</span><span style="color: #7388D6;">(</span>0, 0<span style="color: #7388D6;">)</span>, 20, -5, 0, arcade.csscolor.GREEN<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">self</span>.samlet_spor = <span style="color: #006FE0;">list</span><span style="color: #707183;">()</span>
-        <span style="color: #0000FF;">self</span>.samlet_punkt = <span style="color: #D0372D;">None</span>
-        <span style="color: #0000FF;">self</span>.samlet_sporlaengde = 100
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">setup</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.ret_linje = Ret_Linje<span style="color: #d0730f;">(</span><span style="color: #64aa0f;">(</span>50, 500<span style="color: #64aa0f;">)</span>, <span style="color: #64aa0f;">(</span>20,-10<span style="color: #64aa0f;">)</span>, arcade.csscolor.YELLOW<span style="color: #d0730f;">)</span>
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Cirklen skal bare bev&#230;ge sig rundt om origo</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.cirkel = Cirkel<span style="color: #d0730f;">(</span><span style="color: #64aa0f;">(</span>0, 0<span style="color: #64aa0f;">)</span>, 20, -5, 0, arcade.csscolor.GREEN<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.samlet_spor = <span style="color: #ff7a7f; font-weight: bold;">list</span><span style="color: #d0730f;">()</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.samlet_punkt = <span style="color: #64aa0f;">None</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.samlet_sporlaengde = 100
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">update</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>, delta_tid<span style="color: #707183;">)</span>:
-        <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Opdaterer linje og cirkel hver for sig</span>
-        x_samlet = <span style="color: #0000FF;">self</span>.ret_linje.punkt<span style="color: #707183;">[</span>0<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.cirkel.punkt<span style="color: #707183;">[</span>0<span style="color: #707183;">]</span>
-        y_samlet = <span style="color: #0000FF;">self</span>.ret_linje.punkt<span style="color: #707183;">[</span>1<span style="color: #707183;">]</span> + <span style="color: #0000FF;">self</span>.cirkel.punkt<span style="color: #707183;">[</span>1<span style="color: #707183;">]</span>
-        <span style="color: #0000FF;">self</span>.samlet_punkt = <span style="color: #707183;">(</span>x_samlet, y_samlet<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">self</span>.samlet_spor.append<span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.samlet_punkt<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">if</span> <span style="color: #006FE0;">len</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span>.samlet_spor<span style="color: #707183;">)</span> &gt;= <span style="color: #0000FF;">self</span>.samlet_sporlaengde:
-            <span style="color: #0000FF;">self</span>.samlet_spor.pop<span style="color: #707183;">(</span>0<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">self</span>.ret_linje.opdater<span style="color: #707183;">(</span>delta_tid<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">self</span>.cirkel.opdater<span style="color: #707183;">(</span>delta_tid<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">update</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>, delta_tid<span style="color: #d0730f;">)</span>:
+        <span style="color: #cf9f7f; font-style: italic;"># </span><span style="color: #cf9f7f; font-style: italic;">Opdaterer linje og cirkel hver for sig</span>
+        x_samlet = <span style="color: #c48702; font-weight: bold;">self</span>.ret_linje.punkt<span style="color: #d0730f;">[</span>0<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.cirkel.punkt<span style="color: #d0730f;">[</span>0<span style="color: #d0730f;">]</span>
+        y_samlet = <span style="color: #c48702; font-weight: bold;">self</span>.ret_linje.punkt<span style="color: #d0730f;">[</span>1<span style="color: #d0730f;">]</span> + <span style="color: #c48702; font-weight: bold;">self</span>.cirkel.punkt<span style="color: #d0730f;">[</span>1<span style="color: #d0730f;">]</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.samlet_punkt = <span style="color: #d0730f;">(</span>x_samlet, y_samlet<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.samlet_spor.append<span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.samlet_punkt<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">if</span> <span style="color: #ff7a7f; font-weight: bold;">len</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span>.samlet_spor<span style="color: #d0730f;">)</span> &gt;= <span style="color: #c48702; font-weight: bold;">self</span>.samlet_sporlaengde:
+            <span style="color: #c48702; font-weight: bold;">self</span>.samlet_spor.pop<span style="color: #d0730f;">(</span>0<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.ret_linje.opdater<span style="color: #d0730f;">(</span>delta_tid<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">self</span>.cirkel.opdater<span style="color: #d0730f;">(</span>delta_tid<span style="color: #d0730f;">)</span>
 
-    <span style="color: #0000FF;">def</span> <span style="color: #006699;">on_draw</span><span style="color: #707183;">(</span><span style="color: #0000FF;">self</span><span style="color: #707183;">)</span>:
-        <span style="color: #0000FF;">self</span>.clear<span style="color: #707183;">()</span>
-        arcade.draw_circle_filled<span style="color: #707183;">(</span>*<span style="color: #0000FF;">self</span>.samlet_punkt, 5, arcade.csscolor.TOMATO<span style="color: #707183;">)</span>
-        <span style="color: #0000FF;">for</span> punkt <span style="color: #0000FF;">in</span> <span style="color: #0000FF;">self</span>.samlet_spor:
-            arcade.draw_circle_filled<span style="color: #707183;">(</span>*punkt, 2, arcade.csscolor.TOMATO<span style="color: #707183;">)</span>
+    <span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">on_draw</span><span style="color: #d0730f;">(</span><span style="color: #c48702; font-weight: bold;">self</span><span style="color: #d0730f;">)</span>:
+        <span style="color: #c48702; font-weight: bold;">self</span>.clear<span style="color: #d0730f;">()</span>
+        arcade.draw_circle_filled<span style="color: #d0730f;">(</span>*<span style="color: #c48702; font-weight: bold;">self</span>.samlet_punkt, 5, arcade.csscolor.TOMATO<span style="color: #d0730f;">)</span>
+        <span style="color: #c48702; font-weight: bold;">for</span> punkt <span style="color: #c48702; font-weight: bold;">in</span> <span style="color: #c48702; font-weight: bold;">self</span>.samlet_spor:
+            arcade.draw_circle_filled<span style="color: #d0730f;">(</span>*punkt, 2, arcade.csscolor.TOMATO<span style="color: #d0730f;">)</span>
 
         
-<span style="color: #0000FF;">def</span> <span style="color: #006699;">main</span><span style="color: #707183;">()</span>:
-    vindue = Vindue<span style="color: #707183;">(</span>BREDDE, HOEJDE, <span style="color: #008000;">"Sammensat bev&#230;gelse af ret linje og cirkel"</span><span style="color: #707183;">)</span>
-    vindue.setup<span style="color: #707183;">()</span>
+<span style="color: #c48702; font-weight: bold;">def</span> <span style="color: #3dbbb0;">main</span><span style="color: #d0730f;">()</span>:
+    vindue = Vindue<span style="color: #d0730f;">(</span>BREDDE, HOEJDE, <span style="color: #f06a3f;">"Sammensat bev&#230;gelse af ret linje og cirkel"</span><span style="color: #d0730f;">)</span>
+    vindue.setup<span style="color: #d0730f;">()</span>
 
-    arcade.run<span style="color: #707183;">()</span>
+    arcade.run<span style="color: #d0730f;">()</span>
 
-main<span style="color: #707183;">()</span>
+main<span style="color: #d0730f;">()</span>
 </pre>
 </div>
 
@@ -1128,9 +1145,9 @@ Nu er det slut med at holde jer i hånden. Nu skal I selv til at arbejde!
 </div>
 </div>
 
-<div id="outline-container-orga0a7324" class="outline-2">
-<h2 id="orga0a7324">Eksperimentelt arbejde</h2>
-<div class="outline-text-2" id="text-orga0a7324">
+<div id="outline-container-org863d25e" class="outline-2">
+<h2 id="org863d25e">Eksperimentelt arbejde</h2>
+<div class="outline-text-2" id="text-org863d25e">
 <p>
 I jeres eksperimentelle arbejde kan/skal I arbejde med f.eks.
 </p>
@@ -1162,9 +1179,9 @@ Det kunne f.eks. være et loop på en rutschebane i en forlystelsespark.</li>
 </div>
 
 
-<div id="outline-container-orgf95fe11" class="outline-2">
-<h2 id="orgf95fe11">Programmeringskrav til jeres SRC-rapporter</h2>
-<div class="outline-text-2" id="text-orgf95fe11">
+<div id="outline-container-orgde9e785" class="outline-2">
+<h2 id="orgde9e785">Programmeringskrav til jeres SRC-rapporter</h2>
+<div class="outline-text-2" id="text-orgde9e785">
 <p>
 Når I skriver jeres rapporter her til SRC'en, skal I sørge for at have følgende med, hvor det er relevant:
 </p>

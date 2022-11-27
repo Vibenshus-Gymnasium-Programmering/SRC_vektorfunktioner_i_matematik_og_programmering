@@ -407,7 +407,7 @@ I det følgende eksempel kan I se "koden" til at danne klassediagrammet for den 
 
 Læg mærke til at klassediagrammet er inddelt i 3 dele. Første del angiver klassen navn. Anden del angiver klassen variable, mens tredje del angiver klassen metoder. Man kan kende forskel på variable og metoder ved at se, om der er parenteser efter eller ej. Metoder er funktioner, som knytter sig til et objekt/en klasse, og har derfor parenteser efter sig.
 
-#+begin_src plantuml :file img/Ret_linje_klassediagram.png
+#+begin_src plantuml :file img/Ret_linje_klassediagram.png :exports both
 @startuml
 class Ret_Linje {
 {field} +fast_punkt : (float, float) 
