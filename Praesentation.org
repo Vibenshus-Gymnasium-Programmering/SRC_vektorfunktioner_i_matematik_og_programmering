@@ -35,7 +35,7 @@ Når vi skal animere forskellige vektorfunktioner i arcade i stedet for geogebra
   - I arcade tælles koordinatsystemet i pixels.
 - I geogebra kan man flytte tegnefladen/koordinatsystemet rundt med musen.
   - I arcade ligger (0,0) altid nede i venstre hjørne.
-- I geogebra instiller man selv tiden og tidsskridt vha skyderen
+- I geogebra indstiller man selv tiden og tidsskridt vha skyderen
   - I arcade opdateres skærmen som hovedregel 60 gange i sekundet.
 
 Dette skal I tage højde for, når I skal udvikle jeres egne bevægelser og animationerne af disse.
